@@ -343,13 +343,60 @@ Updated boundary:
 > is often behaviorally acceptable because realistic incomplete/salient/single-gap
 > queries retain enough typed recurrence evidence to recover.
 
+## Later Extension: Payload Graph Projection Refinement
+
+A follow-up experiment stored semantic/content connections inside the keyed motif
+as a payload graph, then retrieved a broad motif bundle and refined by projecting
+and matching the target payload graph.
+
+Architecture tested:
+
+```text
+label-free recurrence motif key
+  -> broad bundle retrieval
+  -> project semantic/content payload graph from each candidate
+  -> refine using target payload graph topology/relations
+```
+
+Decisive control: for each real LDGR-history memory graph, a rewired decoy was
+created with the **same payload nodes** and **same relation-label multiset** but
+with different semantic connections. Node-bag/token overlap and relation-topology
+alone cannot distinguish original from decoy; content graph connections can.
+
+Aggregate on real + rewired decoy pool:
+
+```text
+scorer              top1    target-in-tie  bundle  reduction
+coarse_only         0.0     1.0            64.0    1x
+node_bag            0.0     1.0            3.41    27.25x
+relation_topology   0.0     1.0            64.0    1x
+content_graph       0.7969  1.0            1.70    54.5x
+```
+
+Per-mode content_graph result:
+
+```text
+core:            1.0 top1, bundle 1.0, 64x reduction
+partial:         1.0 top1, bundle 1.0, 64x reduction
+noisy:           1.0 top1, bundle 1.0, 64x reduction
+topic_mechanism: 0.1875 top1, bundle 3.8125, 26x reduction
+```
+
+Interpretation: semantic/content connections stored inside the keyed motif can be
+projected as a graph and used as a refinement layer. This is not reducible to flat
+node/token overlap: same-node rewired decoys defeat node_bag but not
+content_graph matching. The underdetermined topic+mechanism query remains broad,
+which is expected and useful.
+
 Current priority order:
 
 1. keep DP/LCS as the default matcher;
-2. do not adopt anchored_recurring;
-3. treat first-occurrence deletion as a measured boundary whose relevance depends
+2. use projected payload graphs as the refinement layer when target data topology
+   is available;
+3. do not adopt anchored_recurring;
+4. treat first-occurrence deletion as a measured boundary whose relevance depends
    on query behavior, not a universal failure;
-4. do not return to role_payload(local), which was falsified.
+5. do not return to role_payload(local), which was falsified.
 
 ## Artifacts
 

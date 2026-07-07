@@ -1,0 +1,65 @@
+# Experiment result submission for phase0-toy-semantic-retrieval
+# Required fields surfaced by: ldgr research experiment submit <slug> --file <this>
+# Schema: status, result_summary, interpretation, limitations, confidence, decision,
+#         plus optional candidate_facts / proposed_options / next_branch / next_experiment.
+status: completed
+
+result_summary: >
+  Phase 0 toy semantic retrieval benchmark on Dataset A (7 targets: cat, dog,
+  panther, bear, wolf, crow, eagle). Incremental evidence retrieval over four
+  variants: unordered (set), ordered (value subsequence), typed (typed-edge
+  subsequence), shuffled (ordered matcher on permuted evidence, averaged over 5
+  seeds). Ordered: top_3_recall=1.00, candidate_set_reduction=6.34x,
+  false_elimination_rate=0.000, monotonic_narrowing_rate=1.00, final_set_size=1.14,
+  target_survival_rate=1.00. Unordered and typed are IDENTICAL to ordered on every
+  target. Shuffled control is degenerate: top_3_recall=0.00,
+  final_empty_rate=1.00 (collapses to empty candidate sets because a random
+  permutation is almost never a subsequence of a strict canonical trace). Phase-0
+  gate PASSES on literal criteria; see interpretation for the tight bounds on what
+  that pass actually means.
+
+interpretation: >
+  SUPPORTED on literal phase-0 criteria, but the support is narrow and bounded.
+  The primary falsification condition ("evidence accumulation does not reliably
+  narrow the candidate set, or eliminates the correct target too often") is NOT
+  triggered: incremental evidence narrows 6.34x with perfect target survival and
+  zero false eliminations. Two honest caveats, however, mean this validates only
+  the narrowing+survival mechanic, NOT the transition-structure hypothesis itself:
+  (1) Order and type are INERT on this toy -- ordered == unordered == typed for
+  every target -- because the toy world has a globally consistent general->specific
+  attribute ordering (no order conflicts for sequence matching to exploit) and
+  every attribute value maps to exactly one relation type (so typed-edge matching
+  coincides with ordered value matching). (2) The shuffled control is degenerate
+  (final_empty_rate=1.00): a random permutation almost never satisfies a strict
+  subsequence constraint, so the matcher empties out and eliminates the target,
+  making "ordered beats shuffled" technically true but a subsequence-matcher
+  brittleness artifact, not evidence that canonical order carries retrieval value.
+  NET: does-evidence-narrowing-work = YES on a controlled toy; does-transition-
+  order-or-typing-matter = INCONCLUSIVE and requires a conflict-rich dataset or
+  adversarial arrival-order evidence. Claim delta: the "relational transition trace
+  narrows candidates" half of the core hypothesis is supported; the "transition
+  structure (order/type) beats simpler alternatives" half is untested.
+
+limitations: >
+  (1) Evidence is each target's own canonical attributes (best-case arrival
+  order); real-world evidence is noisier and partial, so arrival-order
+  robustness is an upper bound here. (2) ordered == unordered == typed on this
+  toy (verified identical per-target); order/type importance CANNOT be evaluated
+  on Dataset A and needs a dataset where shared attributes appear in different
+  relative order across targets. (3) Shuffled control is degenerate (collapses to
+  empty sets); a non-degenerate order test needs content-consistent but
+  wrong-ordered evidence or a conflict-rich dataset. (4) Typed-edge
+  discrimination (phase 4, >=20% reduction) needs polymorphic values reused
+  under different relation types; this toy assigns each value exactly one type.
+  (5) 7 targets is a controlled toy; top_3_recall=1.0 is partly an artifact of
+  small, cleanly-separable attribute sets; real-record phase-6 work is out of
+  scope and gated.
+
+confidence: medium
+# medium (not high) because the literal pass is real but the most scientifically
+# interesting sub-claim (does order/typing help?) is inconclusive on this toy.
+
+decision: continue
+# continue = proceed on this branch to the next experiment. The redirect to
+# order-importance (rather than assuming transition structure is validated) is
+# recorded via the run close --next-slug and the run_summary claim_delta.

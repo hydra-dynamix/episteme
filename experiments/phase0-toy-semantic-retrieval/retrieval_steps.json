@@ -1,0 +1,3138 @@
+{
+  "experiment": "phase0-toy-semantic-retrieval",
+  "note": "shuffled step trace shown for seed 0; metrics for shuffled are averaged over 5 seeds (see shuffled_per_seed).",
+  "variants": {
+    "unordered": {
+      "bear": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "four_paws"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "four_paws",
+            "claws"
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "four_paws",
+            "claws",
+            "omnivore"
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        }
+      ],
+      "cat": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "whiskers"
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "whiskers",
+            "predator"
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        }
+      ],
+      "crow": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "bird"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "bird",
+            "black"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "bird",
+            "black",
+            "wings"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "bird",
+            "black",
+            "wings",
+            "beak"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "bird",
+            "black",
+            "wings",
+            "beak",
+            "two_legs"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        }
+      ],
+      "dog": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "pack_animal"
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        }
+      ],
+      "eagle": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "bird"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings",
+            "beak"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings",
+            "beak",
+            "two_legs"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings",
+            "beak",
+            "two_legs",
+            "predator"
+          ],
+          "candidates": [
+            "eagle"
+          ],
+          "size": 1
+        }
+      ],
+      "panther": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur",
+            "tail",
+            "four_paws",
+            "predator"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        }
+      ],
+      "wolf": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "pack_animal"
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "pack_animal",
+            "predator"
+          ],
+          "candidates": [
+            "wolf"
+          ],
+          "size": 1
+        }
+      ]
+    },
+    "ordered": {
+      "bear": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "four_paws"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "four_paws",
+            "claws"
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "four_paws",
+            "claws",
+            "omnivore"
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        }
+      ],
+      "cat": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "whiskers"
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "whiskers",
+            "predator"
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        }
+      ],
+      "crow": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "bird"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "bird",
+            "black"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "bird",
+            "black",
+            "wings"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "bird",
+            "black",
+            "wings",
+            "beak"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "bird",
+            "black",
+            "wings",
+            "beak",
+            "two_legs"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        }
+      ],
+      "dog": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "pack_animal"
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        }
+      ],
+      "eagle": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "bird"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings",
+            "beak"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings",
+            "beak",
+            "two_legs"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "bird",
+            "wings",
+            "beak",
+            "two_legs",
+            "predator"
+          ],
+          "candidates": [
+            "eagle"
+          ],
+          "size": 1
+        }
+      ],
+      "panther": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "animal",
+            "mammal",
+            "black",
+            "fur",
+            "tail",
+            "four_paws",
+            "predator"
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        }
+      ],
+      "wolf": [
+        {
+          "step": 1,
+          "evidence": [
+            "animal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "animal",
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "pack_animal"
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "animal",
+            "mammal",
+            "fur",
+            "tail",
+            "four_paws",
+            "pack_animal",
+            "predator"
+          ],
+          "candidates": [
+            "wolf"
+          ],
+          "size": 1
+        }
+      ]
+    },
+    "typed": {
+      "bear": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BODY",
+              "claws"
+            ]
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BODY",
+              "claws"
+            ],
+            [
+              "BEHAVIOR",
+              "omnivore"
+            ]
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        }
+      ],
+      "cat": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ]
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ]
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BODY",
+              "whiskers"
+            ]
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        },
+        {
+          "step": 7,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BODY",
+              "whiskers"
+            ],
+            [
+              "BEHAVIOR",
+              "predator"
+            ]
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        }
+      ],
+      "crow": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ]
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "COLOR",
+              "black"
+            ]
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "BODY",
+              "wings"
+            ]
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "BODY",
+              "wings"
+            ],
+            [
+              "BODY",
+              "beak"
+            ]
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "BODY",
+              "wings"
+            ],
+            [
+              "BODY",
+              "beak"
+            ],
+            [
+              "BODY",
+              "two_legs"
+            ]
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        }
+      ],
+      "dog": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ]
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ]
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BEHAVIOR",
+              "pack_animal"
+            ]
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        }
+      ],
+      "eagle": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ]
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "BODY",
+              "wings"
+            ]
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "BODY",
+              "wings"
+            ],
+            [
+              "BODY",
+              "beak"
+            ]
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "BODY",
+              "wings"
+            ],
+            [
+              "BODY",
+              "beak"
+            ],
+            [
+              "BODY",
+              "two_legs"
+            ]
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "bird"
+            ],
+            [
+              "BODY",
+              "wings"
+            ],
+            [
+              "BODY",
+              "beak"
+            ],
+            [
+              "BODY",
+              "two_legs"
+            ],
+            [
+              "BEHAVIOR",
+              "predator"
+            ]
+          ],
+          "candidates": [
+            "eagle"
+          ],
+          "size": 1
+        }
+      ],
+      "panther": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COLOR",
+              "black"
+            ]
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ]
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ]
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ]
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        },
+        {
+          "step": 7,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COLOR",
+              "black"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BEHAVIOR",
+              "predator"
+            ]
+          ],
+          "candidates": [
+            "panther"
+          ],
+          "size": 1
+        }
+      ],
+      "wolf": [
+        {
+          "step": 1,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "crow",
+            "dog",
+            "eagle",
+            "panther",
+            "wolf"
+          ],
+          "size": 7
+        },
+        {
+          "step": 2,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 3,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ]
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 4,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ]
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 5,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ]
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 6,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BEHAVIOR",
+              "pack_animal"
+            ]
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        },
+        {
+          "step": 7,
+          "evidence": [
+            [
+              "ROOT",
+              "animal"
+            ],
+            [
+              "CLASS",
+              "mammal"
+            ],
+            [
+              "COVERING",
+              "fur"
+            ],
+            [
+              "BODY",
+              "tail"
+            ],
+            [
+              "BODY",
+              "four_paws"
+            ],
+            [
+              "BEHAVIOR",
+              "pack_animal"
+            ],
+            [
+              "BEHAVIOR",
+              "predator"
+            ]
+          ],
+          "candidates": [
+            "wolf"
+          ],
+          "size": 1
+        }
+      ]
+    },
+    "shuffled_seed0": {
+      "bear": [
+        {
+          "step": 1,
+          "evidence": [
+            "omnivore"
+          ],
+          "candidates": [
+            "bear"
+          ],
+          "size": 1
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "omnivore",
+            "claws"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "omnivore",
+            "claws",
+            "fur"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "omnivore",
+            "claws",
+            "fur",
+            "four_paws"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "omnivore",
+            "claws",
+            "fur",
+            "four_paws",
+            "mammal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "omnivore",
+            "claws",
+            "fur",
+            "four_paws",
+            "mammal",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ],
+      "cat": [
+        {
+          "step": 1,
+          "evidence": [
+            "whiskers"
+          ],
+          "candidates": [
+            "cat"
+          ],
+          "size": 1
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "whiskers",
+            "tail"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "whiskers",
+            "tail",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "whiskers",
+            "tail",
+            "animal",
+            "fur"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "whiskers",
+            "tail",
+            "animal",
+            "fur",
+            "predator"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "whiskers",
+            "tail",
+            "animal",
+            "fur",
+            "predator",
+            "four_paws"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "whiskers",
+            "tail",
+            "animal",
+            "fur",
+            "predator",
+            "four_paws",
+            "mammal"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ],
+      "crow": [
+        {
+          "step": 1,
+          "evidence": [
+            "black"
+          ],
+          "candidates": [
+            "crow",
+            "panther"
+          ],
+          "size": 2
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "black",
+            "two_legs"
+          ],
+          "candidates": [
+            "crow"
+          ],
+          "size": 1
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "black",
+            "two_legs",
+            "bird"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "black",
+            "two_legs",
+            "bird",
+            "beak"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "black",
+            "two_legs",
+            "bird",
+            "beak",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "black",
+            "two_legs",
+            "bird",
+            "beak",
+            "animal",
+            "wings"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ],
+      "dog": [
+        {
+          "step": 1,
+          "evidence": [
+            "four_paws"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "four_paws",
+            "fur"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "four_paws",
+            "fur",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "four_paws",
+            "fur",
+            "animal",
+            "mammal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "four_paws",
+            "fur",
+            "animal",
+            "mammal",
+            "pack_animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "four_paws",
+            "fur",
+            "animal",
+            "mammal",
+            "pack_animal",
+            "tail"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ],
+      "eagle": [
+        {
+          "step": 1,
+          "evidence": [
+            "bird"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "bird",
+            "two_legs"
+          ],
+          "candidates": [
+            "crow",
+            "eagle"
+          ],
+          "size": 2
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "bird",
+            "two_legs",
+            "beak"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "bird",
+            "two_legs",
+            "beak",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "bird",
+            "two_legs",
+            "beak",
+            "animal",
+            "predator"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "bird",
+            "two_legs",
+            "beak",
+            "animal",
+            "predator",
+            "wings"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ],
+      "panther": [
+        {
+          "step": 1,
+          "evidence": [
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "mammal",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "mammal",
+            "animal",
+            "fur"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "mammal",
+            "animal",
+            "fur",
+            "black"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "mammal",
+            "animal",
+            "fur",
+            "black",
+            "tail"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "mammal",
+            "animal",
+            "fur",
+            "black",
+            "tail",
+            "predator"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "mammal",
+            "animal",
+            "fur",
+            "black",
+            "tail",
+            "predator",
+            "four_paws"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ],
+      "wolf": [
+        {
+          "step": 1,
+          "evidence": [
+            "mammal"
+          ],
+          "candidates": [
+            "bear",
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 5
+        },
+        {
+          "step": 2,
+          "evidence": [
+            "mammal",
+            "tail"
+          ],
+          "candidates": [
+            "cat",
+            "dog",
+            "panther",
+            "wolf"
+          ],
+          "size": 4
+        },
+        {
+          "step": 3,
+          "evidence": [
+            "mammal",
+            "tail",
+            "pack_animal"
+          ],
+          "candidates": [
+            "dog",
+            "wolf"
+          ],
+          "size": 2
+        },
+        {
+          "step": 4,
+          "evidence": [
+            "mammal",
+            "tail",
+            "pack_animal",
+            "animal"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 5,
+          "evidence": [
+            "mammal",
+            "tail",
+            "pack_animal",
+            "animal",
+            "fur"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 6,
+          "evidence": [
+            "mammal",
+            "tail",
+            "pack_animal",
+            "animal",
+            "fur",
+            "four_paws"
+          ],
+          "candidates": [],
+          "size": 0
+        },
+        {
+          "step": 7,
+          "evidence": [
+            "mammal",
+            "tail",
+            "pack_animal",
+            "animal",
+            "fur",
+            "four_paws",
+            "predator"
+          ],
+          "candidates": [],
+          "size": 0
+        }
+      ]
+    }
+  }
+}

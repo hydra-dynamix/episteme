@@ -1,0 +1,122 @@
+{
+  "hypothesis": "Incremental evidence accumulation narrows the candidate set (>=3x reduction) while preserving the correct target (top_3_recall >= 0.95, false_elimination_rate <= 0.05), and an ordered/typed variant beats the shuffled-order control.",
+  "changed": [
+    "experiments/phase0-toy-semantic-retrieval/dataset.py",
+    "experiments/phase0-toy-semantic-retrieval/substrate.py",
+    "experiments/phase0-toy-semantic-retrieval/run_benchmark.py"
+  ],
+  "commands": [
+    "python3 -m experiments.phase0-toy-semantic-retrieval.run_benchmark"
+  ],
+  "metrics": {
+    "unordered": {
+      "top_3_recall": 1.0,
+      "top_1_recall": 1.0,
+      "candidate_set_reduction": 6.3401,
+      "false_elimination_rate": 0.0,
+      "monotonic_narrowing_rate": 1.0,
+      "mean_candidate_set_size_final": 1.1429,
+      "target_survival_rate": 1.0,
+      "final_empty_rate": 0.0
+    },
+    "ordered": {
+      "top_3_recall": 1.0,
+      "top_1_recall": 1.0,
+      "candidate_set_reduction": 6.3401,
+      "false_elimination_rate": 0.0,
+      "monotonic_narrowing_rate": 1.0,
+      "mean_candidate_set_size_final": 1.1429,
+      "target_survival_rate": 1.0,
+      "final_empty_rate": 0.0
+    },
+    "typed": {
+      "top_3_recall": 1.0,
+      "top_1_recall": 1.0,
+      "candidate_set_reduction": 6.3401,
+      "false_elimination_rate": 0.0,
+      "monotonic_narrowing_rate": 1.0,
+      "mean_candidate_set_size_final": 1.1429,
+      "target_survival_rate": 1.0,
+      "final_empty_rate": 0.0
+    },
+    "shuffled": {
+      "top_3_recall": 0.0,
+      "top_1_recall": 0.0,
+      "candidate_set_reduction": 0.0,
+      "false_elimination_rate": 0.72,
+      "monotonic_narrowing_rate": 1.0,
+      "mean_candidate_set_size_final": 0.0,
+      "target_survival_rate": 0.28,
+      "final_empty_rate": 1.0
+    },
+    "shuffled_control_comparison": {
+      "ordered_vs_shuffled_reduction_improvement_pct": null,
+      "ordered_recall_delta_vs_shuffled": 1.0,
+      "shuffled_final_empty_rate": 1.0,
+      "shuffled_degenerate": true
+    },
+    "order_importance_ordered_vs_unordered": {
+      "reduction_improvement_pct": 0.0,
+      "recall_delta": 0.0,
+      "order_identical_to_unordered": true
+    },
+    "type_importance_typed_vs_ordered": {
+      "reduction_improvement_pct": 0.0,
+      "recall_delta": 0.0,
+      "type_identical_to_ordered": true
+    }
+  },
+  "pass_criteria": {
+    "overall": "supported",
+    "checks": {
+      "top_3_recall_ordered_ge_0.95": true,
+      "candidate_set_reduction_ordered_ge_3x": true,
+      "false_elimination_rate_ordered_le_0.05": true,
+      "monotonic_narrowing_rate_ordered_ge_0.75": true,
+      "ordered_beats_shuffled": true,
+      "typed_beats_shuffled": true,
+      "ordered_or_typed_beats_shuffled": true
+    },
+    "order_importance": {
+      "note": "phase-3 preview: does ordered beat unordered? In this toy ordered == unordered because the toy world has a globally consistent general->specific ordering with no order conflicts.",
+      "ordered_vs_unordered_reduction_improvement_pct": 0.0,
+      "ordered_vs_unordered_recall_delta": 0.0,
+      "order_matters": false
+    },
+    "type_importance": {
+      "note": "phase-4 preview: does typed beat ordered? In this toy every attribute value maps to exactly one relation type, so typed == ordered.",
+      "typed_vs_ordered_reduction_improvement_pct": 0.0,
+      "typed_vs_ordered_recall_delta": 0.0,
+      "type_matters": false
+    },
+    "shuffled_control": {
+      "final_empty_rate": 1.0,
+      "degenerate": true,
+      "warning": "Shuffled control collapses to empty candidate sets; 'ordered beats shuffled' is technically true but reflects subsequence-matcher brittleness to permutation, NOT that canonical order carries retrieval value."
+    },
+    "structured_vs_shuffled": {
+      "ordered": {
+        "reduction_improvement_pct": null,
+        "recall_delta": 1.0,
+        "beats_shuffled": true
+      },
+      "typed": {
+        "reduction_improvement_pct": null,
+        "recall_delta": 1.0,
+        "beats_shuffled": true
+      }
+    }
+  },
+  "outcome": "supported",
+  "claim_delta": "Phase-0 gate SUPPORTED on the controlled toy semantic world: incremental evidence accumulation narrows the candidate set 6.34x for ordered (top_3_recall=1.00, false_elimination=0.000, monotonic=1.00), so the primary falsification condition (narrowing fails OR target eliminated too often) is NOT triggered. HOWEVER two honest caveats bound this result tightly: (1) order and type are INERT in this toy -- ordered == unordered == typed for every target (0.0% reduction gain of ordered over unordered, 0.0% of typed over ordered) because the toy world has a globally consistent general->specific attribute ordering with no order conflicts and every value carries one relation type; (2) the shuffled control is degenerate (final_empty_rate=1.00) -- a random permutation is almost never a subsequence of a strict canonical trace, so the matcher empties out and the target is eliminated, making 'ordered beats shuffled' technically true but a brittleness artifact, not evidence that canonical order carries retrieval value. NET: this validates the narrowing+survival mechanic on a controlled toy but does NOT validate transition structure; whether order/typing matters is inconclusive here and requires a conflict-rich dataset or adversarial arrival-order evidence.",
+  "artifacts": [
+    "experiments/phase0-toy-semantic-retrieval/results.json",
+    "experiments/phase0-toy-semantic-retrieval/retrieval_steps.json",
+    "experiments/phase0-toy-semantic-retrieval/comparison.md"
+  ],
+  "next_work": {
+    "slug": "order-importance-with-conflict-dataset",
+    "title": "Phase 3 order-importance test on a conflict-rich dataset",
+    "description": "Phase 0 confirmed narrowing+survival but showed order and type are inert on Dataset A (ordered==unordered==typed) because attributes have a globally consistent ordering. Build a dataset (or adversarial arrival-order evidence) where shared attributes appear in DIFFERENT relative order across targets, plus at least one value reused under different relation types, then rerun ordered vs unordered vs typed vs a non-degenerate shuffled control. Pass = ordered beats unordered by >=15% reduction with <=3% recall loss AND typed beats ordered by >=20%. If ordered still does not beat unordered, the substrate should be graph-neighborhood based, not trajectory based (docs phase 3)."
+  }
+}

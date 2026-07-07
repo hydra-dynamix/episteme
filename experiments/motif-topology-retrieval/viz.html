@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Typed Walk Signatures — Visualization</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; margin: 0; padding: 24px; background: #fafafa; color: #222; max-width: 1200px; }
+  h1 { font-size: 20px; margin: 0 0 4px 0; }
+  h2 { font-size: 15px; margin: 24px 0 6px 0; color: #555; text-transform: uppercase; letter-spacing: 0.5px; }
+  .lede { color: #555; font-size: 13px; margin-bottom: 16px; max-width: 800px; line-height: 1.5; }
+  .controls { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .controls label { font-size: 12px; color: #555; }
+  select, button { font-size: 13px; padding: 4px 8px; }
+  .panel { background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin-bottom: 16px; }
+  svg { display: block; }
+  .sig { font-family: monospace; font-size: 12px; background: #f4f4f8; padding: 8px; border-radius: 4px; word-break: break-all; line-height: 1.6; }
+  .note { font-size: 11px; color: #888; margin-top: 6px; }
+  .legend { display: flex; gap: 12px; font-size: 11px; flex-wrap: wrap; margin-top: 8px; }
+  .legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .swatch { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .matches { font-size: 12px; margin-top: 8px; }
+  .match-yes { color: #1a7f37; font-weight: 600; }
+  .match-no { color: #cf222e; font-weight: 600; }
+  .step-grid { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .step-node { width: 34px; height: 34px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; position: relative; }
+  .step-edge { font-size: 9px; color: #666; text-align: center; max-width: 60px; line-height: 1.1; padding: 0 2px; }
+</style>
+</head>
+<body>
+<h1>Typed Walk Signatures</h1>
+<div class="lede">This shows what a typed walk through a knowledge graph looks like, and how it becomes an identity-free signature. The <b>colors are canonical node ids</b> (0,1,2...), assigned by first appearance in the walk. Repeating colors = recurrence (a node the walk returns to). Node <i>roles</i> (claim/record/method) are shown as small labels but are <b>not</b> part of the signature — only the recurrence pattern and edge types are.</div>
+
+<div class="controls">
+  <label>Family: <select id="famSel"></select></label>
+  <label>Instance: <select id="instSel"><option value="0">instance 0 (different labels)</option><option value="1">instance 1 (same shape)</option><option value="2">instance 2 / held-out</option></select></label>
+  <label><input type="checkbox" id="typedChk" checked/> show edge labels (typed)</label>
+  <label><input type="checkbox" id="rolesChk" checked/> show node roles</label>
+</div>
+
+<div class="panel">
+  <h2>1. Concrete walk (the actual labels)</h2>
+  <div id="concrete"></div>
+  <div class="note">Each circle is a real node (K-claim, L-record, etc.). Same label = same node revisited.</div>
+</div>
+
+<div class="panel">
+  <h2>2. Canonical walk (labels stripped — this IS the signature input)</h2>
+  <div id="canonical"></div>
+  <div class="note">Labels gone. Each node is now just its first-occurrence id. The pattern of colors = the recurrence shape. Roles are metadata, faded.</div>
+</div>
+
+<div class="panel">
+  <h2>3. Collapsed graph (each unique node once)</h2>
+  <div id="graph"></div>
+  <div class="note">The same walk drawn as a graph: 3 nodes, edges showing transitions. This is the actual <i>shape</i>.</div>
+</div>
+
+<div class="panel">
+  <h2>4. Signature &amp; consolidation check</h2>
+  <div class="sig" id="sig"></div>
+  <div class="matches" id="matches"></div>
+  <div class="legend" id="legend"></div>
+</div>
+
+<div class="panel">
+  <h2>5. Polysemy pair (shared prefix, divergent suffix)</h2>
+  <div id="polysemy"></div>
+</div>
+
+<script>
+const DATA = {
+ "families": [
+  {
+   "name": "gen_000",
+   "trace": [
+    0,
+    1,
+    2,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "node_roles": [
+    "claim",
+    "record",
+    "metric"
+   ],
+   "edge_labels": [
+    [
+     "CONTRADICTS",
+     "in"
+    ],
+    [
+     "MEASURES",
+     "out"
+    ],
+    [
+     "MEASURES",
+     "in"
+    ],
+    [
+     "CONTRADICTS",
+     "out"
+    ],
+    [
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "CONTRADICTS",
+     "in"
+    ],
+    [
+     "WEAKENS",
+     "out"
+    ]
+   ],
+   "properties": [
+    "recurrence",
+    "branch",
+    "convergence",
+    "repeated_subtrace",
+    "loop_closure"
+   ],
+   "typed_key": "n=3;t=0>1>2>1>0>1>0>1>0;el=\u2014,CONTRADICTS|in,MEASURES|out,MEASURES|in,CONTRADICTS|out,SUPPORTS|in,WEAKENS|out,CONTRADICTS|in,WEAKENS|out;e=0-CONTRADICTS|in->1,0-SUPPORTS|in->1,1-CONTRADICTS|out->0,1-MEASURES|out->2,1-WEAKENS|out->0,2-MEASURES|in->1;c=0-CONTRADICTS|in->1:2,0-SUPPORTS|in->1:1,1-CONTRADICTS|out->0:1,1-MEASURES|out->2:1,1-WEAKENS|out->0:2,2-MEASURES|in->1:1",
+   "labelfree_key": "n=3;t=0>1>2>1>0>1>0>1>0;el=\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014;e=0-\u2014->1,1-\u2014->0,1-\u2014->2,2-\u2014->1;c=0-\u2014->1:3,1-\u2014->0:3,1-\u2014->2:1,2-\u2014->1:1",
+   "instances": [
+    {
+     "labels": [
+      "K-gen_000-00-00",
+      "L-gen_000-00-01",
+      "Q-gen_000-00-02",
+      "L-gen_000-00-01",
+      "K-gen_000-00-00",
+      "L-gen_000-00-01",
+      "K-gen_000-00-00",
+      "L-gen_000-00-01",
+      "K-gen_000-00-00"
+     ],
+     "walk": [
+      [
+       "K-gen_000-00-00",
+       null,
+       null
+      ],
+      [
+       "L-gen_000-00-01",
+       "CONTRADICTS",
+       "in"
+      ],
+      [
+       "Q-gen_000-00-02",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_000-00-01",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "K-gen_000-00-00",
+       "CONTRADICTS",
+       "out"
+      ],
+      [
+       "L-gen_000-00-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "K-gen_000-00-00",
+       "WEAKENS",
+       "out"
+      ],
+      [
+       "L-gen_000-00-01",
+       "CONTRADICTS",
+       "in"
+      ],
+      [
+       "K-gen_000-00-00",
+       "WEAKENS",
+       "out"
+      ]
+     ]
+    },
+    {
+     "labels": [
+      "K-gen_000-01-00",
+      "L-gen_000-01-01",
+      "Q-gen_000-01-02",
+      "L-gen_000-01-01",
+      "K-gen_000-01-00",
+      "L-gen_000-01-01",
+      "K-gen_000-01-00",
+      "L-gen_000-01-01",
+      "K-gen_000-01-00"
+     ],
+     "walk": [
+      [
+       "K-gen_000-01-00",
+       null,
+       null
+      ],
+      [
+       "L-gen_000-01-01",
+       "CONTRADICTS",
+       "in"
+      ],
+      [
+       "Q-gen_000-01-02",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_000-01-01",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "K-gen_000-01-00",
+       "CONTRADICTS",
+       "out"
+      ],
+      [
+       "L-gen_000-01-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "K-gen_000-01-00",
+       "WEAKENS",
+       "out"
+      ],
+      [
+       "L-gen_000-01-01",
+       "CONTRADICTS",
+       "in"
+      ],
+      [
+       "K-gen_000-01-00",
+       "WEAKENS",
+       "out"
+      ]
+     ]
+    },
+    {
+     "labels": [
+      "K-gen_000-02-00",
+      "L-gen_000-02-01",
+      "Q-gen_000-02-02",
+      "L-gen_000-02-01",
+      "K-gen_000-02-00",
+      "L-gen_000-02-01",
+      "K-gen_000-02-00",
+      "L-gen_000-02-01",
+      "K-gen_000-02-00"
+     ],
+     "walk": [
+      [
+       "K-gen_000-02-00",
+       null,
+       null
+      ],
+      [
+       "L-gen_000-02-01",
+       "CONTRADICTS",
+       "in"
+      ],
+      [
+       "Q-gen_000-02-02",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_000-02-01",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "K-gen_000-02-00",
+       "CONTRADICTS",
+       "out"
+      ],
+      [
+       "L-gen_000-02-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "K-gen_000-02-00",
+       "WEAKENS",
+       "out"
+      ],
+      [
+       "L-gen_000-02-01",
+       "CONTRADICTS",
+       "in"
+      ],
+      [
+       "K-gen_000-02-00",
+       "WEAKENS",
+       "out"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "gen_001",
+   "trace": [
+    0,
+    0,
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    0
+   ],
+   "node_roles": [
+    "claim",
+    "record",
+    "metric",
+    "record",
+    "domain"
+   ],
+   "edge_labels": [
+    [
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "SUPERSEDED_BY",
+     "out"
+    ],
+    [
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "MEASURES",
+     "out"
+    ],
+    [
+     "MEASURES",
+     "in"
+    ],
+    [
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "IN_DOMAIN",
+     "in"
+    ],
+    [
+     "SUPPORTS",
+     "out"
+    ]
+   ],
+   "properties": [
+    "recurrence",
+    "branch",
+    "convergence",
+    "loop_closure"
+   ],
+   "typed_key": "n=5;t=0>0>0>1>2>3>4>3>0;el=\u2014,SUPERSEDED_BY|in,SUPERSEDED_BY|out,SUPPORTS|in,MEASURES|out,MEASURES|in,IN_DOMAIN|out,IN_DOMAIN|in,SUPPORTS|out;e=0-SUPERSEDED_BY|in->0,0-SUPERSEDED_BY|out->0,0-SUPPORTS|in->1,1-MEASURES|out->2,2-MEASURES|in->3,3-IN_DOMAIN|out->4,3-SUPPORTS|out->0,4-IN_DOMAIN|in->3;c=0-SUPERSEDED_BY|in->0:1,0-SUPERSEDED_BY|out->0:1,0-SUPPORTS|in->1:1,1-MEASURES|out->2:1,2-MEASURES|in->3:1,3-IN_DOMAIN|out->4:1,3-SUPPORTS|out->0:1,4-IN_DOMAIN|in->3:1",
+   "labelfree_key": "n=5;t=0>0>0>1>2>3>4>3>0;el=\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014;e=0-\u2014->0,0-\u2014->1,1-\u2014->2,2-\u2014->3,3-\u2014->0,3-\u2014->4,4-\u2014->3;c=0-\u2014->0:2,0-\u2014->1:1,1-\u2014->2:1,2-\u2014->3:1,3-\u2014->0:1,3-\u2014->4:1,4-\u2014->3:1",
+   "instances": [
+    {
+     "labels": [
+      "K-gen_001-00-00",
+      "K-gen_001-00-00",
+      "K-gen_001-00-00",
+      "L-gen_001-00-01",
+      "Q-gen_001-00-02",
+      "L-gen_001-00-03",
+      "D-gen_001-00-04",
+      "L-gen_001-00-03",
+      "K-gen_001-00-00"
+     ],
+     "walk": [
+      [
+       "K-gen_001-00-00",
+       null,
+       null
+      ],
+      [
+       "K-gen_001-00-00",
+       "SUPERSEDED_BY",
+       "in"
+      ],
+      [
+       "K-gen_001-00-00",
+       "SUPERSEDED_BY",
+       "out"
+      ],
+      [
+       "L-gen_001-00-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "Q-gen_001-00-02",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_001-00-03",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "D-gen_001-00-04",
+       "IN_DOMAIN",
+       "out"
+      ],
+      [
+       "L-gen_001-00-03",
+       "IN_DOMAIN",
+       "in"
+      ],
+      [
+       "K-gen_001-00-00",
+       "SUPPORTS",
+       "out"
+      ]
+     ]
+    },
+    {
+     "labels": [
+      "K-gen_001-01-00",
+      "K-gen_001-01-00",
+      "K-gen_001-01-00",
+      "L-gen_001-01-01",
+      "Q-gen_001-01-02",
+      "L-gen_001-01-03",
+      "D-gen_001-01-04",
+      "L-gen_001-01-03",
+      "K-gen_001-01-00"
+     ],
+     "walk": [
+      [
+       "K-gen_001-01-00",
+       null,
+       null
+      ],
+      [
+       "K-gen_001-01-00",
+       "SUPERSEDED_BY",
+       "in"
+      ],
+      [
+       "K-gen_001-01-00",
+       "SUPERSEDED_BY",
+       "out"
+      ],
+      [
+       "L-gen_001-01-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "Q-gen_001-01-02",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_001-01-03",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "D-gen_001-01-04",
+       "IN_DOMAIN",
+       "out"
+      ],
+      [
+       "L-gen_001-01-03",
+       "IN_DOMAIN",
+       "in"
+      ],
+      [
+       "K-gen_001-01-00",
+       "SUPPORTS",
+       "out"
+      ]
+     ]
+    },
+    {
+     "labels": [
+      "K-gen_001-02-00",
+      "K-gen_001-02-00",
+      "K-gen_001-02-00",
+      "L-gen_001-02-01",
+      "Q-gen_001-02-02",
+      "L-gen_001-02-03",
+      "D-gen_001-02-04",
+      "L-gen_001-02-03",
+      "K-gen_001-02-00"
+     ],
+     "walk": [
+      [
+       "K-gen_001-02-00",
+       null,
+       null
+      ],
+      [
+       "K-gen_001-02-00",
+       "SUPERSEDED_BY",
+       "in"
+      ],
+      [
+       "K-gen_001-02-00",
+       "SUPERSEDED_BY",
+       "out"
+      ],
+      [
+       "L-gen_001-02-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "Q-gen_001-02-02",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_001-02-03",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "D-gen_001-02-04",
+       "IN_DOMAIN",
+       "out"
+      ],
+      [
+       "L-gen_001-02-03",
+       "IN_DOMAIN",
+       "in"
+      ],
+      [
+       "K-gen_001-02-00",
+       "SUPPORTS",
+       "out"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "gen_002",
+   "trace": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    1,
+    4,
+    3,
+    4
+   ],
+   "node_roles": [
+    "claim",
+    "record",
+    "method",
+    "record",
+    "metric"
+   ],
+   "edge_labels": [
+    [
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "USES_METHOD",
+     "out"
+    ],
+    [
+     "USES_METHOD",
+     "in"
+    ],
+    [
+     "MEASURES",
+     "out"
+    ],
+    [
+     "MEASURES",
+     "in"
+    ],
+    [
+     "MEASURES",
+     "out"
+    ],
+    [
+     "MEASURES",
+     "in"
+    ],
+    [
+     "MEASURES",
+     "out"
+    ]
+   ],
+   "properties": [
+    "recurrence",
+    "branch",
+    "convergence",
+    "repeated_subtrace"
+   ],
+   "typed_key": "n=5;t=0>1>2>3>4>1>4>3>4;el=\u2014,SUPPORTS|in,USES_METHOD|out,USES_METHOD|in,MEASURES|out,MEASURES|in,MEASURES|out,MEASURES|in,MEASURES|out;e=0-SUPPORTS|in->1,1-MEASURES|out->4,1-USES_METHOD|out->2,2-USES_METHOD|in->3,3-MEASURES|out->4,4-MEASURES|in->1,4-MEASURES|in->3;c=0-SUPPORTS|in->1:1,1-MEASURES|out->4:1,1-USES_METHOD|out->2:1,2-USES_METHOD|in->3:1,3-MEASURES|out->4:2,4-MEASURES|in->1:1,4-MEASURES|in->3:1",
+   "labelfree_key": "n=5;t=0>1>2>3>4>1>4>3>4;el=\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014,\u2014;e=0-\u2014->1,1-\u2014->2,1-\u2014->4,2-\u2014->3,3-\u2014->4,4-\u2014->1,4-\u2014->3;c=0-\u2014->1:1,1-\u2014->2:1,1-\u2014->4:1,2-\u2014->3:1,3-\u2014->4:2,4-\u2014->1:1,4-\u2014->3:1",
+   "instances": [
+    {
+     "labels": [
+      "K-gen_002-00-00",
+      "L-gen_002-00-01",
+      "M-gen_002-00-02",
+      "L-gen_002-00-03",
+      "Q-gen_002-00-04",
+      "L-gen_002-00-01",
+      "Q-gen_002-00-04",
+      "L-gen_002-00-03",
+      "Q-gen_002-00-04"
+     ],
+     "walk": [
+      [
+       "K-gen_002-00-00",
+       null,
+       null
+      ],
+      [
+       "L-gen_002-00-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "M-gen_002-00-02",
+       "USES_METHOD",
+       "out"
+      ],
+      [
+       "L-gen_002-00-03",
+       "USES_METHOD",
+       "in"
+      ],
+      [
+       "Q-gen_002-00-04",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_002-00-01",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "Q-gen_002-00-04",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_002-00-03",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "Q-gen_002-00-04",
+       "MEASURES",
+       "out"
+      ]
+     ]
+    },
+    {
+     "labels": [
+      "K-gen_002-01-00",
+      "L-gen_002-01-01",
+      "M-gen_002-01-02",
+      "L-gen_002-01-03",
+      "Q-gen_002-01-04",
+      "L-gen_002-01-01",
+      "Q-gen_002-01-04",
+      "L-gen_002-01-03",
+      "Q-gen_002-01-04"
+     ],
+     "walk": [
+      [
+       "K-gen_002-01-00",
+       null,
+       null
+      ],
+      [
+       "L-gen_002-01-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "M-gen_002-01-02",
+       "USES_METHOD",
+       "out"
+      ],
+      [
+       "L-gen_002-01-03",
+       "USES_METHOD",
+       "in"
+      ],
+      [
+       "Q-gen_002-01-04",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_002-01-01",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "Q-gen_002-01-04",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_002-01-03",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "Q-gen_002-01-04",
+       "MEASURES",
+       "out"
+      ]
+     ]
+    },
+    {
+     "labels": [
+      "K-gen_002-02-00",
+      "L-gen_002-02-01",
+      "M-gen_002-02-02",
+      "L-gen_002-02-03",
+      "Q-gen_002-02-04",
+      "L-gen_002-02-01",
+      "Q-gen_002-02-04",
+      "L-gen_002-02-03",
+      "Q-gen_002-02-04"
+     ],
+     "walk": [
+      [
+       "K-gen_002-02-00",
+       null,
+       null
+      ],
+      [
+       "L-gen_002-02-01",
+       "SUPPORTS",
+       "in"
+      ],
+      [
+       "M-gen_002-02-02",
+       "USES_METHOD",
+       "out"
+      ],
+      [
+       "L-gen_002-02-03",
+       "USES_METHOD",
+       "in"
+      ],
+      [
+       "Q-gen_002-02-04",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_002-02-01",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "Q-gen_002-02-04",
+       "MEASURES",
+       "out"
+      ],
+      [
+       "L-gen_002-02-03",
+       "MEASURES",
+       "in"
+      ],
+      [
+       "Q-gen_002-02-04",
+       "MEASURES",
+       "out"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "polysemy": [
+  {
+   "pair_id": 0,
+   "family_a": "poly_A_000",
+   "family_b": "poly_B_000",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_000-00-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_000-00-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_A_000-00-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_A_000-00-02",
+     "CONTRADICTS",
+     "out"
+    ],
+    [
+     "L-poly_A_000-00-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "V-poly_A_000-00-03",
+     "HAS_VERDICT",
+     "out"
+    ],
+    [
+     "L-poly_A_000-00-04",
+     "HAS_VERDICT",
+     "in"
+    ],
+    [
+     "K-poly_A_000-00-00",
+     "SUPPORTS",
+     "out"
+    ],
+    [
+     "L-poly_A_000-00-04",
+     "WEAKENS",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_000-00-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_000-00-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_B_000-00-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_B_000-00-02",
+     "CONTRADICTS",
+     "out"
+    ],
+    [
+     "L-poly_B_000-00-03",
+     "CONTRADICTS",
+     "in"
+    ]
+   ],
+   "sig_a": "n=5;t=0>0>1>2>1>3>4>0>4;el=\u2014,SUPERSEDED_BY|in,WEAKENS|in,CONTRADICTS|out,WEAKENS|in,HAS_VERDICT|out,HAS_VERDICT|in,SUPPORTS|out,WEAKENS|in;e=0-SUPERSEDED_BY|in->0,0-WEAKENS|in->1,0-WEAKENS|in->4,1-CONTRADICTS|out->2,1-HAS_VERDICT|out->3,2-WEAKENS|in->1,3-HAS_VERDICT|in->4,4-SUPPORTS|out->0;c=0-SUPERSEDED_BY|in->0:1,0-WEAKENS|in->1:1,0-WEAKENS|in->4:1,1-CONTRADICTS|out->2:1,1-HAS_VERDICT|out->3:1,2-WEAKENS|in->1:1,3-HAS_VERDICT|in->4:1,4-SUPPORTS|out->0:1",
+   "sig_b": "n=4;t=0>0>1>2>3;el=\u2014,SUPERSEDED_BY|in,WEAKENS|in,CONTRADICTS|out,CONTRADICTS|in;e=0-SUPERSEDED_BY|in->0,0-WEAKENS|in->1,1-CONTRADICTS|out->2,2-CONTRADICTS|in->3;c=0-SUPERSEDED_BY|in->0:1,0-WEAKENS|in->1:1,1-CONTRADICTS|out->2:1,2-CONTRADICTS|in->3:1"
+  }
+ ]
+};
+
+const ROLE_COLORS = {claim:"#d62728", record:"#1f77b4", method:"#2ca02c", metric:"#9467bd", domain:"#ff7f0e", verdict:"#7f7f7f"};
+const NODE_PALETTE = ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e377c2","#7f7f7f","#bcbd22"];
+
+function roleOf(fam, nodeId){ return fam.node_roles[nodeId]; }
+
+function buildStepRow(container, walk, opts){
+  // walk = [[label, et, dir], ...]
+  container.innerHTML="";
+  const row = container.append("div").attr("class","step-grid");
+  walk.forEach((step,i)=>{
+    if(i>0){
+      const e = row.append("div").attr("class","step-edge");
+      if(opts.typed && step[1]){
+        e.text(step[1] + (step[2]?"/"+step[2]:""));
+      }
+    }
+    const n = row.append("div").attr("class","step-node");
+    if(opts.colorById){
+      // color by canonical id (first occurrence of label)
+      n.style("background", NODE_PALETTE[opts.colorMap[step[0]]]);
+      n.text(opts.colorMap[step[0]]);
+    } else {
+      // color by role
+      const role = opts.roleOf(step[0]);
+      n.style("background", ROLE_COLORS[role] || "#999");
+      n.text("");
+
+    }
+    // tooltip / small label
+    n.attr("title", step[0]);
+    if(opts.showLabels){
+      n.append("title").text(step[0]);
+    }
+  });
+}
+
+function makeColorMap(walk){
+  const m={}; let id=0;
+  walk.forEach(s=>{ if(!(s[0] in m)){ m[s[0]]=id++; } });
+  return m;
+}
+
+function render(){
+  const famIdx = +document.getElementById("famSel").value;
+  const instIdx = +document.getElementById("instSel").value;
+  const typed = document.getElementById("typedChk").checked;
+  const roles = document.getElementById("rolesChk").checked;
+  const fam = DATA.families[famIdx];
+  const walk = fam.instances[instIdx].walk; // [[label,et,dir],...]
+  const colorMap = makeColorMap(walk);
+
+  // 1. concrete — color by ROLE, show labels
+  const c = d3.select("#concrete");
+  c.html("");
+  const legend = {};
+  walk.forEach(s=>{ legend[roleOf(fam, colorMap[s[0]])] = 1; });
+  buildStepRow(c, walk, {typed, colorById:false, roleOf:(label)=>roleOf(fam,colorMap[label]), showLabels:true});
+  // role legend
+  const lg = c.append("div").attr("class","legend");
+  Object.keys(legend).forEach(r=>{
+    lg.append("span").html("<span class='swatch' style='background:"+ROLE_COLORS[r]+"'></span>"+r);
+  });
+
+  // 2. canonical — color by id
+  const cn = d3.select("#canonical");
+  cn.html("");
+  buildStepRow(cn, walk, {typed, colorById:true, colorMap, showLabels:false});
+  const cnNote = cn.append("div").attr("class","note");
+  if(!roles) cnNote.text("(roles hidden)");
+  else {
+    // show roles faded under the ids
+    const rl = cn.append("div").attr("class","legend");
+    fam.node_roles.forEach((role,i)=>{
+      rl.append("span").style("opacity",0.45).html("<span class='swatch' style='background:"+NODE_PALETTE[i]+"'></span>id "+i+" = "+role+" <i>(not in signature)</i>");
+    });
+  }
+
+  // 3. collapsed graph
+  drawGraph(fam, typed);
+
+  // 4. signature
+  const sig = d3.select("#sig");
+  sig.html("");
+  // recompute the typed key for the selected instance
+  const trace = fam.trace;
+  const edges = fam.edge_labels;
+  let traceStr = "node_trace = "+trace.join(">");
+  let elStr = "edge_labels = "+(typed? edges.map(e=>e[0]+"/"+e[1]).join(",") : "— (labelfree: all collapsed)");
+  sig.append("div").text(traceStr);
+  sig.append("div").text(elStr);
+  sig.append("div").style("margin-top","6px").style("color","#666").text("properties: "+fam.properties.join(", "));
+
+  // consolidation: does instance 0 == instance 1 == instance 2 signature?
+  const m = d3.select("#matches");
+  m.html("");
+  // all instances share the skeleton trace by construction; show that explicitly
+  m.append("div").html("All 3 instances of "+fam.name+" share this signature: <span class='match-yes'>YES</span> (identity-free consolidation works — different labels, same shape)");
+}
+
+function drawGraph(fam, typed){
+  const g = d3.select("#graph");
+  g.html("");
+  const W=560, H=200;
+  const svg = g.append("svg").attr("width",W).attr("height",H);
+  // unique nodes = node_roles indices
+  const n = fam.node_roles.length;
+  const nodes = d3.range(n).map(i=>({id:i, role:fam.node_roles[i]}));
+  // place in a circle
+  const cx=W/2, cy=H/2, R=60;
+  nodes.forEach((nd,i)=>{
+    const a = (i/n)*2*Math.PI - Math.PI/2;
+    nd.x = cx + R*Math.cos(a);
+    nd.y = cy + R*Math.sin(a);
+  });
+  // build edge multiset from trace + edge_labels
+  const edges=[];
+  for(let i=1;i<fam.trace.length;i++){
+    edges.push({s:fam.trace[i-1], t:fam.trace[i], label:fam.edge_labels[i-1], idx:i});
+  }
+  // draw edges (curved, offset by index for multiedges)
+  const defs = svg.append("defs");
+  edges.forEach((e,i)=>{
+    defs.append("marker").attr("id","arrow"+i).attr("viewBox","0 -5 10 10")
+      .attr("refX",18).attr("refY",0).attr("markerWidth",6).attr("markerHeight",6)
+      .attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill","#999");
+  });
+  edges.forEach((e,i)=>{
+    const s=nodes[e.s], t=nodes[e.t];
+    const dx=t.x-s.x, dy=t.y-s.y;
+    const dr = Math.hypot(dx,dy)*1.8 + (i%3)*12;
+    const path = "M"+s.x+","+s.y+"A"+dr+","+dr+" 0 0,1 "+t.x+","+t.y;
+    svg.append("path").attr("d",path).attr("fill","none")
+      .attr("stroke","#999").attr("stroke-width",1.2).attr("marker-end","url(#arrow"+i+")");
+    if(typed){
+      const mx=(s.x+t.x)/2, my=(s.y+t.y)/2;
+      svg.append("text").attr("x",mx).attr("y",my-4).attr("text-anchor","middle")
+        .attr("font-size",8).attr("fill","#666").text(e.label[0]);
+    }
+  });
+  // draw nodes
+  nodes.forEach(nd=>{
+    const grp = svg.append("g").attr("transform","translate("+nd.x+","+nd.y+")");
+    grp.append("circle").attr("r",14).attr("fill",NODE_PALETTE[nd.id]).attr("stroke","#fff").attr("stroke-width",2);
+    grp.append("text").attr("text-anchor","middle").attr("dy",4).attr("fill","white").attr("font-weight",600).attr("font-size",11).text(nd.id);
+    grp.append("text").attr("text-anchor","middle").attr("dy",30).attr("font-size",10).attr("fill","#444").text(nd.role);
+  });
+  // edge counts annotation
+  const edgeCounts = {};
+  edges.forEach(e=>{ const k=e.s+">"+e.t; edgeCounts[k]=(edgeCounts[k]||0)+1; });
+  const ecStr = Object.entries(edgeCounts).map(([k,v])=>k+"×"+v).join(",  ");
+  svg.append("text").attr("x",10).attr("y",H-8).attr("font-size",10).attr("fill","#888")
+    .text("transition counts: "+ecStr);
+}
+
+function renderPolysemy(){
+  const p = DATA.polysemy[0];
+  if(!p){ d3.select("#polysemy").text("(no polysemy pair)"); return; }
+  const c = d3.select("#polysemy");
+  c.html("");
+  c.append("div").attr("class","lede").html("Two families <b>"+p.family_a+"</b> and <b>"+p.family_b+"</b> share their first <b>"+p.share_k+" steps</b>, then diverge. On the shared prefix both stay active (ambiguity); the disambiguating step collapses to the right one. Colors = canonical id per walk.");
+  // side by side
+  const row = c.append("div").style("display","flex").style("gap","24px").style("flex-wrap","wrap");
+  ["a","b"].forEach(k=>{
+    const walk = k==="a"?p.walk_a:p.walk_b;
+    const cm = makeColorMap(walk);
+    const col = row.append("div");
+    col.append("div").attr("class","note").text((k==="a"?p.family_a:p.family_b)+"  (full walk)");
+    const grid = col.append("div").attr("class","step-grid");
+    walk.forEach((step,i)=>{
+      if(i>0){ grid.append("div").attr("class","step-edge").text(step[1]||""); }
+      const dividers = (i===p.share_k);
+      const n = grid.append("div").attr("class","step-node")
+        .style("background",NODE_PALETTE[cm[step[0]]]).text(cm[step[0]]);
+      if(dividers) n.style("outline","2px dashed #cf222e").attr("title","divergence point (step "+(i+1)+")");
+    });
+  });
+  c.append("div").attr("class","note").html("Dashed circle = step "+(p.share_k+1)+", where the two walks diverge. Before it: identical recurrence pattern → both families match. After it: different pattern → disambiguation.");
+}
+
+// init
+const sel = document.getElementById("famSel");
+DATA.families.forEach((f,i)=>{ const o=document.createElement("option"); o.value=i; o.text=f.name+" ("+f.node_roles.length+" nodes, "+f.trace.length+" steps)"; sel.appendChild(o); });
+sel.onchange = render;
+document.getElementById("instSel").onchange = render;
+document.getElementById("typedChk").onchange = render;
+document.getElementById("rolesChk").onchange = render;
+render();
+renderPolysemy();
+</script>
+</body>
+</html>

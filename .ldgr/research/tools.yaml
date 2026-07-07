@@ -1,0 +1,37 @@
+# Durable reusable research tools.
+# Agents may add entries here when a script or fixture becomes a repeated instrument.
+# Keep experiments as the claim-bearing records; tools are reusable meters, runners, or inputs.
+version: 1
+tools:
+  - slug: phase0-toy-semantic-benchmark
+    path: experiments/phase0-toy-semantic-retrieval/run_benchmark.py
+    description: >-
+      Reusable meter for the relational transition memory substrate on Dataset A.
+      Runs unordered/ordered/typed/shuffled variants with incremental evidence
+      retrieval and emits results.json, retrieval_steps.json, comparison.md,
+      run_summary.json (top_3_recall, candidate_set_reduction,
+      false_elimination_rate, monotonic_narrowing_rate, shuffled-control +
+      order/type-importance comparisons). Invoke with
+      `python3 -m experiments.phase0-toy-semantic-retrieval.run_benchmark`.
+    first_used_run: 2
+    caveats: >-
+      On Dataset A ordered==unordered==typed (globally consistent ordering) and
+      the shuffled control collapses to empty sets; use a conflict-rich dataset
+      to actually exercise order/typing.
+  - slug: typed-motif-graph-generator
+    path: experiments/motif-topology-retrieval/generator.py
+    description: >-
+      Reusable typed relational motif generator. Samples skeletons via random
+      walks over a fixed role grammar (claim/record/method/metric/domain/verdict;
+      9 typed edges), rejection-samples for >=2 structural properties, dedupes
+      by typed canonical signature. Emits disjoint families + prefix-shared
+      divergent (polysemy) pairs. Used by bench_relaxation.py and
+      bench_twostage.py.
+    first_used_run: 2
+    caveats: >-
+      Bugfix 2026-07-07: generate_prefix_shared_pairs now requires partner
+      length > share_k AND divergence at index share_k. Previously accepted a
+      truncated prefix of the base as a valid polysemy partner (pair-7 defect:
+      5-step B was a prefix of 9-step A), which inflated disambiguation failure
+      rate (0.875 instead of 1.0). The fix is data-construction correctness,
+      not a substrate property change.

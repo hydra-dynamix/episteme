@@ -1,0 +1,30 @@
+current_program: relational-transition-memory-substrate
+current_branch: main
+research_mode_enabled: true
+required_context_before_work: true
+required_decision_after_experiment: true
+require_human_approval_for_blocked_overrides: true
+blocked_work: []
+allowed_work: []
+required_experiment_fields:
+- mode
+- hypothesis
+- setup
+- primary_metrics
+- result
+- interpretation
+- limitations
+- decision
+- allowed_next_steps
+- blocked_next_steps
+allowed_artifact_roots:
+- output/
+- docs/
+- experiments/
+review_thresholds:
+  contested_fact_counterevidence_count: 1
+recommendation:
+  prefer_classifications:
+  - main_path
+  - validation
+  - exploratory

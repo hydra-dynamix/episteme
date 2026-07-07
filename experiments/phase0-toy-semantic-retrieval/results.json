@@ -1,0 +1,295 @@
+{
+  "experiment": "phase0-toy-semantic-retrieval",
+  "spine": {
+    "program": "relational-transition-memory-substrate",
+    "branch": "main",
+    "question": "does-toy-evidence-narrowing-work",
+    "option": "compare-substrate-variants-on-toy-world",
+    "mode": "falsification"
+  },
+  "dataset": {
+    "targets": [
+      "bear",
+      "cat",
+      "crow",
+      "dog",
+      "eagle",
+      "panther",
+      "wolf"
+    ],
+    "n_targets": 7,
+    "traces": {
+      "cat": [
+        "animal",
+        "mammal",
+        "fur",
+        "tail",
+        "four_paws",
+        "whiskers",
+        "predator"
+      ],
+      "dog": [
+        "animal",
+        "mammal",
+        "fur",
+        "tail",
+        "four_paws",
+        "pack_animal"
+      ],
+      "panther": [
+        "animal",
+        "mammal",
+        "black",
+        "fur",
+        "tail",
+        "four_paws",
+        "predator"
+      ],
+      "bear": [
+        "animal",
+        "mammal",
+        "fur",
+        "four_paws",
+        "claws",
+        "omnivore"
+      ],
+      "wolf": [
+        "animal",
+        "mammal",
+        "fur",
+        "tail",
+        "four_paws",
+        "pack_animal",
+        "predator"
+      ],
+      "crow": [
+        "animal",
+        "bird",
+        "black",
+        "wings",
+        "beak",
+        "two_legs"
+      ],
+      "eagle": [
+        "animal",
+        "bird",
+        "wings",
+        "beak",
+        "two_legs",
+        "predator"
+      ]
+    },
+    "attr_type": {
+      "animal": "ROOT",
+      "mammal": "CLASS",
+      "bird": "CLASS",
+      "black": "COLOR",
+      "brown": "COLOR",
+      "white": "COLOR",
+      "fur": "COVERING",
+      "feathers": "COVERING",
+      "tail": "BODY",
+      "wings": "BODY",
+      "beak": "BODY",
+      "whiskers": "BODY",
+      "four_paws": "BODY",
+      "two_legs": "BODY",
+      "claws": "BODY",
+      "predator": "BEHAVIOR",
+      "pack_animal": "BEHAVIOR",
+      "omnivore": "BEHAVIOR"
+    }
+  },
+  "thresholds": {
+    "top_3_recall_min": 0.95,
+    "candidate_set_reduction_min": 3.0,
+    "false_elimination_rate_max": 0.05,
+    "monotonic_narrowing_rate_min": 0.75,
+    "order_reduction_improvement_min": 0.15,
+    "order_recall_loss_max": 0.03
+  },
+  "metrics_by_variant": {
+    "unordered": {
+      "variant": "unordered",
+      "n_targets": 7,
+      "n_world": 7,
+      "final_empty_rate": 0.0,
+      "top_1_recall": 1.0,
+      "top_3_recall": 1.0,
+      "mean_candidate_set_size_final": 1.1429,
+      "candidate_set_reduction": 6.3401,
+      "world_reduction": 6.125,
+      "false_elimination_rate": 0.0,
+      "target_survival_rate": 1.0,
+      "monotonic_narrowing_rate": 1.0
+    },
+    "ordered": {
+      "variant": "ordered",
+      "n_targets": 7,
+      "n_world": 7,
+      "final_empty_rate": 0.0,
+      "top_1_recall": 1.0,
+      "top_3_recall": 1.0,
+      "mean_candidate_set_size_final": 1.1429,
+      "candidate_set_reduction": 6.3401,
+      "world_reduction": 6.125,
+      "false_elimination_rate": 0.0,
+      "target_survival_rate": 1.0,
+      "monotonic_narrowing_rate": 1.0
+    },
+    "typed": {
+      "variant": "typed",
+      "n_targets": 7,
+      "n_world": 7,
+      "final_empty_rate": 0.0,
+      "top_1_recall": 1.0,
+      "top_3_recall": 1.0,
+      "mean_candidate_set_size_final": 1.1429,
+      "candidate_set_reduction": 6.3401,
+      "world_reduction": 6.125,
+      "false_elimination_rate": 0.0,
+      "target_survival_rate": 1.0,
+      "monotonic_narrowing_rate": 1.0
+    },
+    "shuffled": {
+      "top_1_recall": 0.0,
+      "top_3_recall": 0.0,
+      "mean_candidate_set_size_final": 0.0,
+      "candidate_set_reduction": 0.0,
+      "world_reduction": 0.0,
+      "false_elimination_rate": 0.72,
+      "target_survival_rate": 0.28,
+      "monotonic_narrowing_rate": 1.0,
+      "final_empty_rate": 1.0,
+      "variant": "shuffled",
+      "n_targets": 7,
+      "n_world": 7
+    }
+  },
+  "shuffled_per_seed": [
+    {
+      "seed": 0,
+      "top_3_recall": 0.0,
+      "candidate_set_reduction": 0.0,
+      "false_elimination_rate": 0.7556,
+      "monotonic_narrowing_rate": 1.0
+    },
+    {
+      "seed": 1,
+      "top_3_recall": 0.0,
+      "candidate_set_reduction": 0.0,
+      "false_elimination_rate": 0.6889,
+      "monotonic_narrowing_rate": 1.0
+    },
+    {
+      "seed": 2,
+      "top_3_recall": 0.0,
+      "candidate_set_reduction": 0.0,
+      "false_elimination_rate": 0.7333,
+      "monotonic_narrowing_rate": 1.0
+    },
+    {
+      "seed": 3,
+      "top_3_recall": 0.0,
+      "candidate_set_reduction": 0.0,
+      "false_elimination_rate": 0.6667,
+      "monotonic_narrowing_rate": 1.0
+    },
+    {
+      "seed": 4,
+      "top_3_recall": 0.0,
+      "candidate_set_reduction": 0.0,
+      "false_elimination_rate": 0.7556,
+      "monotonic_narrowing_rate": 1.0
+    }
+  ],
+  "gate": {
+    "overall": "supported",
+    "checks": {
+      "top_3_recall_ordered_ge_0.95": true,
+      "candidate_set_reduction_ordered_ge_3x": true,
+      "false_elimination_rate_ordered_le_0.05": true,
+      "monotonic_narrowing_rate_ordered_ge_0.75": true,
+      "ordered_beats_shuffled": true,
+      "typed_beats_shuffled": true,
+      "ordered_or_typed_beats_shuffled": true
+    },
+    "order_importance": {
+      "note": "phase-3 preview: does ordered beat unordered? In this toy ordered == unordered because the toy world has a globally consistent general->specific ordering with no order conflicts.",
+      "ordered_vs_unordered_reduction_improvement_pct": 0.0,
+      "ordered_vs_unordered_recall_delta": 0.0,
+      "order_matters": false
+    },
+    "type_importance": {
+      "note": "phase-4 preview: does typed beat ordered? In this toy every attribute value maps to exactly one relation type, so typed == ordered.",
+      "typed_vs_ordered_reduction_improvement_pct": 0.0,
+      "typed_vs_ordered_recall_delta": 0.0,
+      "type_matters": false
+    },
+    "shuffled_control": {
+      "final_empty_rate": 1.0,
+      "degenerate": true,
+      "warning": "Shuffled control collapses to empty candidate sets; 'ordered beats shuffled' is technically true but reflects subsequence-matcher brittleness to permutation, NOT that canonical order carries retrieval value."
+    },
+    "structured_vs_shuffled": {
+      "ordered": {
+        "reduction_improvement_pct": null,
+        "recall_delta": 1.0,
+        "beats_shuffled": true
+      },
+      "typed": {
+        "reduction_improvement_pct": null,
+        "recall_delta": 1.0,
+        "beats_shuffled": true
+      }
+    }
+  },
+  "interpretation": {
+    "claim_delta": "Phase-0 gate SUPPORTED on the controlled toy semantic world: incremental evidence accumulation narrows the candidate set 6.34x for ordered (top_3_recall=1.00, false_elimination=0.000, monotonic=1.00), so the primary falsification condition (narrowing fails OR target eliminated too often) is NOT triggered. HOWEVER two honest caveats bound this result tightly: (1) order and type are INERT in this toy -- ordered == unordered == typed for every target (0.0% reduction gain of ordered over unordered, 0.0% of typed over ordered) because the toy world has a globally consistent general->specific attribute ordering with no order conflicts and every value carries one relation type; (2) the shuffled control is degenerate (final_empty_rate=1.00) -- a random permutation is almost never a subsequence of a strict canonical trace, so the matcher empties out and the target is eliminated, making 'ordered beats shuffled' technically true but a brittleness artifact, not evidence that canonical order carries retrieval value. NET: this validates the narrowing+survival mechanic on a controlled toy but does NOT validate transition structure; whether order/typing matters is inconclusive here and requires a conflict-rich dataset or adversarial arrival-order evidence.",
+    "order_matters": false,
+    "type_matters": false,
+    "shuffled_degenerate": true,
+    "shuffled_per_seed": [
+      {
+        "seed": 0,
+        "top_3_recall": 0.0,
+        "candidate_set_reduction": 0.0,
+        "false_elimination_rate": 0.7556,
+        "monotonic_narrowing_rate": 1.0
+      },
+      {
+        "seed": 1,
+        "top_3_recall": 0.0,
+        "candidate_set_reduction": 0.0,
+        "false_elimination_rate": 0.6889,
+        "monotonic_narrowing_rate": 1.0
+      },
+      {
+        "seed": 2,
+        "top_3_recall": 0.0,
+        "candidate_set_reduction": 0.0,
+        "false_elimination_rate": 0.7333,
+        "monotonic_narrowing_rate": 1.0
+      },
+      {
+        "seed": 3,
+        "top_3_recall": 0.0,
+        "candidate_set_reduction": 0.0,
+        "false_elimination_rate": 0.6667,
+        "monotonic_narrowing_rate": 1.0
+      },
+      {
+        "seed": 4,
+        "top_3_recall": 0.0,
+        "candidate_set_reduction": 0.0,
+        "false_elimination_rate": 0.7556,
+        "monotonic_narrowing_rate": 1.0
+      }
+    ],
+    "next_work": {
+      "slug": "order-importance-with-conflict-dataset",
+      "title": "Phase 3 order-importance test on a conflict-rich dataset",
+      "description": "Phase 0 confirmed narrowing+survival but showed order and type are inert on Dataset A (ordered==unordered==typed) because attributes have a globally consistent ordering. Build a dataset (or adversarial arrival-order evidence) where shared attributes appear in DIFFERENT relative order across targets, plus at least one value reused under different relation types, then rerun ordered vs unordered vs typed vs a non-degenerate shuffled control. Pass = ordered beats unordered by >=15% reduction with <=3% recall loss AND typed beats ordered by >=20%. If ordered still does not beat unordered, the substrate should be graph-neighborhood based, not trajectory based (docs phase 3)."
+    }
+  }
+}

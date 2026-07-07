@@ -1,0 +1,203 @@
+{
+  "branch": {
+    "id": 1,
+    "question": "Can a memory substrate built from relational transition traces retrieve relevant knowledge by accumulating partial evidence and narrowing the active candidate trajectory field while preserving correct targets?",
+    "slug": "main",
+    "status": "active",
+    "title": "Main"
+  },
+  "experiment": {
+    "branch_id": 1,
+    "id": 1,
+    "mode": "falsification",
+    "option_id": 1,
+    "slug": "phase0-toy-semantic-retrieval",
+    "status": "completed",
+    "title": "Phase 0 toy semantic retrieval benchmark"
+  },
+  "format": "ldgr-research.review_package.v1",
+  "generated_at": "2026-07-06T18:33:40.660031895+00:00",
+  "policy_snapshot": {
+    "allowed_artifact_roots": [
+      "output/",
+      "docs/",
+      "experiments/"
+    ],
+    "allowed_work": [],
+    "blocked_work": [],
+    "current_branch": "main",
+    "current_program": "relational-transition-memory-substrate",
+    "recommendation": {
+      "prefer_classifications": [
+        "main_path",
+        "validation",
+        "exploratory"
+      ]
+    },
+    "require_human_approval_for_blocked_overrides": true,
+    "required_context_before_work": true,
+    "required_decision_after_experiment": true,
+    "required_experiment_fields": [
+      "mode",
+      "hypothesis",
+      "setup",
+      "primary_metrics",
+      "result",
+      "interpretation",
+      "limitations",
+      "decision",
+      "allowed_next_steps",
+      "blocked_next_steps"
+    ],
+    "research_mode_enabled": true,
+    "review_thresholds": {
+      "contested_fact_counterevidence_count": 1
+    }
+  },
+  "program": {
+    "id": 1,
+    "objective": "Determine whether knowledge can be represented as relational transition traces where evidence accumulation narrows candidate trajectories toward relevant concepts, claims, or learning records while preserving correct targets.",
+    "slug": "relational-transition-memory-substrate",
+    "status": "active",
+    "title": "Relational Transition Memory Substrate"
+  },
+  "program_snapshot": {
+    "axioms": [],
+    "branches": [
+      {
+        "decision_summary": "continue: Phase 0 toy semantic retrieval benchmark on Dataset A (7 targets: cat, dog, panther, bear, wolf, crow, eagle). Incremental evidence retrieval over four variants: unordered (set), ordered (value subsequence), typed (typed-edge subsequence), shuffled (ordered matcher on permuted evidence, averaged over 5 seeds). Ordered: top_3_recall=1.00, candidate_set_reduction=6.34x, false_elimination_rate=0.000, monotonic_narrowing_rate=1.00, final_set_size=1.14, target_survival_rate=1.00. Unordered and typed are IDENTICAL to ordered on every target. Shuffled control is degenerate: top_3_recall=0.00, final_empty_rate=1.00 (collapses to empty candidate sets because a random permutation is almost never a subsequence of a strict canonical trace). Phase-0 gate PASSES on literal criteria; see interpretation for the tight bounds on what that pass actually means.\n",
+        "id": 1,
+        "parent_branch_id": null,
+        "program_id": 1,
+        "question": "Can a memory substrate built from relational transition traces retrieve relevant knowledge by accumulating partial evidence and narrowing the active candidate trajectory field while preserving correct targets?",
+        "rationale": "Direct test of the core hypothesis and primary falsification condition; gates all later phases and any LDGR integration.",
+        "slug": "main",
+        "status": "active",
+        "title": "Main",
+        "uuid": "2bf85544-8883-4ec6-b3e8-220dfa6b342c"
+      }
+    ],
+    "experiments": [
+      {
+        "allowed_next_steps": "[\"Build a conflict-rich dataset (shared attributes in different relative order across targets + >=1 value reused under different relation types) and run phase-3 order-importance + phase-4 type-importance with a non-degenerate shuffled control; pass = ordered beats unordered >=15% reduction AND typed beats ordered >=20%.\"]",
+        "artifacts": [],
+        "blocked_next_steps": "[\"Phase 6 real Learning Record retrieval and any LDGR/Episteme integration of the substrate; blocked until order-importance is resolved on a conflict-rich dataset and phase 5 contradiction metrics pass.\"]",
+        "branch_id": 1,
+        "decisions": [
+          {
+            "confidence": "medium",
+            "created_at": "2026-07-06 18:33:40",
+            "decision": "continue",
+            "experiment_id": 1,
+            "id": 2,
+            "interpretation": "SUPPORTED on literal phase-0 criteria, but the support is narrow and bounded. The primary falsification condition (\"evidence accumulation does not reliably narrow the candidate set, or eliminates the correct target too often\") is NOT triggered: incremental evidence narrows 6.34x with perfect target survival and zero false eliminations. Two honest caveats, however, mean this validates only the narrowing+survival mechanic, NOT the transition-structure hypothesis itself: (1) Order and type are INERT on this toy -- ordered == unordered == typed for every target -- because the toy world has a globally consistent general->specific attribute ordering (no order conflicts for sequence matching to exploit) and every attribute value maps to exactly one relation type (so typed-edge matching coincides with ordered value matching). (2) The shuffled control is degenerate (final_empty_rate=1.00): a random permutation almost never satisfies a strict subsequence constraint, so the matcher empties out and eliminates the target, making \"ordered beats shuffled\" technically true but a subsequence-matcher brittleness artifact, not evidence that canonical order carries retrieval value. NET: does-evidence-narrowing-work = YES on a controlled toy; does-transition- order-or-typing-matter = INCONCLUSIVE and requires a conflict-rich dataset or adversarial arrival-order evidence. Claim delta: the \"relational transition trace narrows candidates\" half of the core hypothesis is supported; the \"transition structure (order/type) beats simpler alternatives\" half is untested.\n",
+            "limitations": "(1) Evidence is each target's own canonical attributes (best-case arrival order); real-world evidence is noisier and partial, so arrival-order robustness is an upper bound here. (2) ordered == unordered == typed on this toy (verified identical per-target); order/type importance CANNOT be evaluated on Dataset A and needs a dataset where shared attributes appear in different relative order across targets. (3) Shuffled control is degenerate (collapses to empty sets); a non-degenerate order test needs content-consistent but wrong-ordered evidence or a conflict-rich dataset. (4) Typed-edge discrimination (phase 4, >=20% reduction) needs polymorphic values reused under different relation types; this toy assigns each value exactly one type. (5) 7 targets is a controlled toy; top_3_recall=1.0 is partly an artifact of small, cleanly-separable attribute sets; real-record phase-6 work is out of scope and gated.\n",
+            "next_branch_id": null,
+            "next_experiment_id": null,
+            "proposed_options": [],
+            "result_summary": "Phase 0 toy semantic retrieval benchmark on Dataset A (7 targets: cat, dog, panther, bear, wolf, crow, eagle). Incremental evidence retrieval over four variants: unordered (set), ordered (value subsequence), typed (typed-edge subsequence), shuffled (ordered matcher on permuted evidence, averaged over 5 seeds). Ordered: top_3_recall=1.00, candidate_set_reduction=6.34x, false_elimination_rate=0.000, monotonic_narrowing_rate=1.00, final_set_size=1.14, target_survival_rate=1.00. Unordered and typed are IDENTICAL to ordered on every target. Shuffled control is degenerate: top_3_recall=0.00, final_empty_rate=1.00 (collapses to empty candidate sets because a random permutation is almost never a subsequence of a strict canonical trace). Phase-0 gate PASSES on literal criteria; see interpretation for the tight bounds on what that pass actually means.\n",
+            "uuid": "d2e1fc22-d80a-404f-b760-74b1b5ba350d"
+          },
+          {
+            "confidence": "high",
+            "created_at": "2026-07-06 18:28:04",
+            "decision": "continue",
+            "experiment_id": 1,
+            "id": 1,
+            "interpretation": "Narrowing+survival confirmed on a controlled toy; transition order/typing value is inconclusive here and requires a conflict-rich dataset.",
+            "limitations": "Evidence is target's own canonical attributes (best-case arrival). Ordered==unordered==typed in this toy. Shuffled control degenerate (collapses to empty). Canonical-order metrics are an upper bound on arrival-order robustness.",
+            "next_branch_id": null,
+            "next_experiment_id": null,
+            "proposed_options": [],
+            "result_summary": "Phase-0 gate SUPPORTED on Dataset A (7 targets): ordered narrows 6.34x, top_3_recall=1.0, false_elimination=0.0, monotonic=1.0, survival=1.0; primary falsification condition NOT triggered. Caveats: order and type are inert (ordered==unordered==typed, 0% gain) due to globally consistent ordering and one type per value; shuffled control degenerate (final_empty_rate=1.0) so 'ordered beats shuffled' is a brittleness artifact. Validates narrowing+survival mechanic, not transition structure.",
+            "uuid": "dcbd8b6a-1dec-402f-8cf2-66734d3ab1d4"
+          }
+        ],
+        "fail_criteria": "[\"Toy data fails to narrow candidates, eliminates correct targets too often, or ordered/typed does not beat the shuffled control.\"]",
+        "hypothesis": "Incremental evidence accumulation narrows the candidate set (>=3x reduction) while preserving the correct target (top_3_recall >= 0.95, false_elimination_rate <= 0.05), and an ordered/typed variant beats the shuffled-order control.",
+        "id": 1,
+        "metrics": [],
+        "mode": "falsification",
+        "observation_goal": "Measure candidate set size and target survival after each evidence step per variant, and whether ordering/typing beats the shuffled control.",
+        "option_id": 1,
+        "pass_criteria": "[\"top_3_recall >= 0.95 AND candidate_set_reduction >= 3x AND false_elimination_rate <= 0.05 AND monotonic_narrowing_rate >= 0.75 AND (ordered or typed beats shuffled control).\"]",
+        "phase": "0",
+        "primary_metrics": [
+          "top_3_recall"
+        ],
+        "rationale": "Smallest falsifiable test per the docs recommended first experiment; gates all later phases and LDGR integration.",
+        "runs": [],
+        "secondary_metrics": [
+          "candidate_set_reduction",
+          "false_elimination_rate",
+          "monotonic_narrowing_rate"
+        ],
+        "setup": "Build Dataset A toy semantic world in the research harness (research/substrate layout); run substrate eval for unordered, ordered, typed, and shuffled variants with incremental evidence retrieval.",
+        "slug": "phase0-toy-semantic-retrieval",
+        "status": "completed",
+        "title": "Phase 0 toy semantic retrieval benchmark",
+        "uuid": "07ec2bd4-7c5e-4198-bfc7-5326297e282c"
+      }
+    ],
+    "exported_at": "2026-07-06T18:33:40.660007911+00:00",
+    "facts": [],
+    "format": "ldgr-research.program_export.v2",
+    "ldgr-research_version": "0.1.1",
+    "open_questions": [
+      {
+        "branch_id": 1,
+        "context": "Phase 0 Dataset A toy semantic world; first gate per docs/relational-transition-memory-substrate.md phase 2. Acceptance: top_3_recall >= 0.95, false_elimination_rate <= 0.05, candidate_set_reduction >= 3x, monotonic_narrowing_rate >= 0.75, and an ordered/typed variant must beat the shuffled control.",
+        "id": 1,
+        "program_id": 1,
+        "question": "Does evidence accumulation narrow the candidate field and preserve the correct target on the Phase 0 toy semantic world (Dataset A)?",
+        "slug": "does-toy-evidence-narrowing-work",
+        "status": "open",
+        "uuid": "1340e40c-01dd-41f2-82a1-4e3d70873c3e"
+      }
+    ],
+    "program": {
+      "id": 1,
+      "objective": "Determine whether knowledge can be represented as relational transition traces where evidence accumulation narrows candidate trajectories toward relevant concepts, claims, or learning records while preserving correct targets.",
+      "slug": "relational-transition-memory-substrate",
+      "status": "active",
+      "title": "Relational Transition Memory Substrate",
+      "uuid": "a9f86c33-7fe8-4b38-8376-0e50ec29a032"
+    },
+    "research_options": [
+      {
+        "branch_id": 1,
+        "classification": "validation",
+        "description": "Compare unordered neighborhood, ordered transition trace, typed ordered trace, and shuffled-order control on Dataset A using incremental evidence retrieval. Emit results.json, retrieval_steps.json, comparison.md, failure_cases.md.",
+        "hypothesis": "Ordered or typed ordered transition traces narrow the candidate set and preserve correct targets better than the shuffled-order control and at least match the unordered neighborhood baseline.",
+        "id": 1,
+        "program_id": 1,
+        "review_state": "none",
+        "slug": "compare-substrate-variants-on-toy-world",
+        "source_decision_id": null,
+        "source_experiment_id": null,
+        "status": "answered",
+        "title": "Compare substrate variants on toy world",
+        "uuid": "f36bd7fb-900c-4909-b2c4-9ab60828e452"
+      }
+    ],
+    "schema_version": 4,
+    "source": null
+  },
+  "recommended_rubric_version": "researchreview.generic.v1",
+  "report": {
+    "anchors": [
+      "result",
+      "interpretation",
+      "limitations",
+      "facts",
+      "next-hypotheses"
+    ],
+    "content": "# Experiment: Phase 0 toy semantic retrieval benchmark\n\nExperiment: phase0-toy-semantic-retrieval\nBranch: main\nProgram: relational-transition-memory-substrate\nPhase: 0\nStatus: completed\nMode: falsification\n\nAnchors: [Result](#result) | [Interpretation](#interpretation) | [Limitations](#limitations) | [Facts](#facts) | [Next Hypotheses](#next-hypotheses)\n\nHypothesis: Incremental evidence accumulation narrows the candidate set (>=3x reduction) while preserving the correct target (top_3_recall >= 0.95, false_elimination_rate <= 0.05), and an ordered/typed variant beats the shuffled-order control.\nSetup: Build Dataset A toy semantic world in the research harness (research/substrate layout); run substrate eval for unordered, ordered, typed, and shuffled variants with incremental evidence retrieval.\nObservation Goal: Measure candidate set size and target survival after each evidence step per variant, and whether ordering/typing beats the shuffled control.\nRationale: Smallest falsifiable test per the docs recommended first experiment; gates all later phases and LDGR integration.\nPrimary Metrics: top_3_recall\nSecondary Metrics: candidate_set_reduction, false_elimination_rate, monotonic_narrowing_rate\nPass Criteria: [\"top_3_recall >= 0.95 AND candidate_set_reduction >= 3x AND false_elimination_rate <= 0.05 AND monotonic_narrowing_rate >= 0.75 AND (ordered or typed beats shuffled control).\"]\nFail Criteria: [\"Toy data fails to narrow candidates, eliminates correct targets too often, or ordered/typed does not beat the shuffled control.\"]\n\n## Runs\nNo runs recorded.\n\n## Metrics\nNo metrics recorded.\n\n## Artifacts\nNo artifacts recorded.\n\n<a id=\"result\"></a>\n## Result\nPhase 0 toy semantic retrieval benchmark on Dataset A (7 targets: cat, dog, panther, bear, wolf, crow, eagle). Incremental evidence retrieval over four variants: unordered (set), ordered (value subsequence), typed (typed-edge subsequence), shuffled (ordered matcher on permuted evidence, averaged over 5 seeds). Ordered: top_3_recall=1.00, candidate_set_reduction=6.34x, false_elimination_rate=0.000, monotonic_narrowing_rate=1.00, final_set_size=1.14, target_survival_rate=1.00. Unordered and typed are IDENTICAL to ordered on every target. Shuffled control is degenerate: top_3_recall=0.00, final_empty_rate=1.00 (collapses to empty candidate sets because a random permutation is almost never a subsequence of a strict canonical trace). Phase-0 gate PASSES on literal criteria; see interpretation for the tight bounds on what that pass actually means.\n\n\n<a id=\"interpretation\"></a>\n## Interpretation\nSUPPORTED on literal phase-0 criteria, but the support is narrow and bounded. The primary falsification condition (\"evidence accumulation does not reliably narrow the candidate set, or eliminates the correct target too often\") is NOT triggered: incremental evidence narrows 6.34x with perfect target survival and zero false eliminations. Two honest caveats, however, mean this validates only the narrowing+survival mechanic, NOT the transition-structure hypothesis itself: (1) Order and type are INERT on this toy -- ordered == unordered == typed for every target -- because the toy world has a globally consistent general->specific attribute ordering (no order conflicts for sequence matching to exploit) and every attribute value maps to exactly one relation type (so typed-edge matching coincides with ordered value matching). (2) The shuffled control is degenerate (final_empty_rate=1.00): a random permutation almost never satisfies a strict subsequence constraint, so the matcher empties out and eliminates the target, making \"ordered beats shuffled\" technically true but a subsequence-matcher brittleness artifact, not evidence that canonical order carries retrieval value. NET: does-evidence-narrowing-work = YES on a controlled toy; does-transition- order-or-typing-matter = INCONCLUSIVE and requires a conflict-rich dataset or adversarial arrival-order evidence. Claim delta: the \"relational transition trace narrows candidates\" half of the core hypothesis is supported; the \"transition structure (order/type) beats simpler alternatives\" half is untested.\n\n\n<a id=\"limitations\"></a>\n## Limitations\n(1) Evidence is each target's own canonical attributes (best-case arrival order); real-world evidence is noisier and partial, so arrival-order robustness is an upper bound here. (2) ordered == unordered == typed on this toy (verified identical per-target); order/type importance CANNOT be evaluated on Dataset A and needs a dataset where shared attributes appear in different relative order across targets. (3) Shuffled control is degenerate (collapses to empty sets); a non-degenerate order test needs content-consistent but wrong-ordered evidence or a conflict-rich dataset. (4) Typed-edge discrimination (phase 4, >=20% reduction) needs polymorphic values reused under different relation types; this toy assigns each value exactly one type. (5) 7 targets is a controlled toy; top_3_recall=1.0 is partly an artifact of small, cleanly-separable attribute sets; real-record phase-6 work is out of scope and gated.\n\n\nDecision: continue\nConfidence: medium\nAllowed Next Steps: [\"Build a conflict-rich dataset (shared attributes in different relative order across targets + >=1 value reused under different relation types) and run phase-3 order-importance + phase-4 type-importance with a non-degenerate shuffled control; pass = ordered beats unordered >=15% reduction AND typed beats ordered >=20%.\"]\nBlocked Next Steps: [\"Phase 6 real Learning Record retrieval and any LDGR/Episteme integration of the substrate; blocked until order-importance is resolved on a conflict-rich dataset and phase 5 contradiction metrics pass.\"]\n\n<a id=\"facts\"></a>\n## Facts\nNo facts recorded.\n\n<a id=\"next-hypotheses\"></a>\n## Next Hypotheses\nNo next hypotheses recorded.\n",
+    "path": ".ldgr/research/reports/experiments/phase0-toy-semantic-retrieval.md"
+  },
+  "review_guidance": null,
+  "submit_artifact": {
+    "content": "# Experiment result submission for phase0-toy-semantic-retrieval\n# Required fields surfaced by: ldgr research experiment submit <slug> --file <this>\n# Schema: status, result_summary, interpretation, limitations, confidence, decision,\n#         plus optional candidate_facts / proposed_options / next_branch / next_experiment.\nstatus: completed\n\nresult_summary: >\n  Phase 0 toy semantic retrieval benchmark on Dataset A (7 targets: cat, dog,\n  panther, bear, wolf, crow, eagle). Incremental evidence retrieval over four\n  variants: unordered (set), ordered (value subsequence), typed (typed-edge\n  subsequence), shuffled (ordered matcher on permuted evidence, averaged over 5\n  seeds). Ordered: top_3_recall=1.00, candidate_set_reduction=6.34x,\n  false_elimination_rate=0.000, monotonic_narrowing_rate=1.00, final_set_size=1.14,\n  target_survival_rate=1.00. Unordered and typed are IDENTICAL to ordered on every\n  target. Shuffled control is degenerate: top_3_recall=0.00,\n  final_empty_rate=1.00 (collapses to empty candidate sets because a random\n  permutation is almost never a subsequence of a strict canonical trace). Phase-0\n  gate PASSES on literal criteria; see interpretation for the tight bounds on what\n  that pass actually means.\n\ninterpretation: >\n  SUPPORTED on literal phase-0 criteria, but the support is narrow and bounded.\n  The primary falsification condition (\"evidence accumulation does not reliably\n  narrow the candidate set, or eliminates the correct target too often\") is NOT\n  triggered: incremental evidence narrows 6.34x with perfect target survival and\n  zero false eliminations. Two honest caveats, however, mean this validates only\n  the narrowing+survival mechanic, NOT the transition-structure hypothesis itself:\n  (1) Order and type are INERT on this toy -- ordered == unordered == typed for\n  every target -- because the toy world has a globally consistent general->specific\n  attribute ordering (no order conflicts for sequence matching to exploit) and\n  every attribute value maps to exactly one relation type (so typed-edge matching\n  coincides with ordered value matching). (2) The shuffled control is degenerate\n  (final_empty_rate=1.00): a random permutation almost never satisfies a strict\n  subsequence constraint, so the matcher empties out and eliminates the target,\n  making \"ordered beats shuffled\" technically true but a subsequence-matcher\n  brittleness artifact, not evidence that canonical order carries retrieval value.\n  NET: does-evidence-narrowing-work = YES on a controlled toy; does-transition-\n  order-or-typing-matter = INCONCLUSIVE and requires a conflict-rich dataset or\n  adversarial arrival-order evidence. Claim delta: the \"relational transition trace\n  narrows candidates\" half of the core hypothesis is supported; the \"transition\n  structure (order/type) beats simpler alternatives\" half is untested.\n\nlimitations: >\n  (1) Evidence is each target's own canonical attributes (best-case arrival\n  order); real-world evidence is noisier and partial, so arrival-order\n  robustness is an upper bound here. (2) ordered == unordered == typed on this\n  toy (verified identical per-target); order/type importance CANNOT be evaluated\n  on Dataset A and needs a dataset where shared attributes appear in different\n  relative order across targets. (3) Shuffled control is degenerate (collapses to\n  empty sets); a non-degenerate order test needs content-consistent but\n  wrong-ordered evidence or a conflict-rich dataset. (4) Typed-edge\n  discrimination (phase 4, >=20% reduction) needs polymorphic values reused\n  under different relation types; this toy assigns each value exactly one type.\n  (5) 7 targets is a controlled toy; top_3_recall=1.0 is partly an artifact of\n  small, cleanly-separable attribute sets; real-record phase-6 work is out of\n  scope and gated.\n\nconfidence: medium\n# medium (not high) because the literal pass is real but the most scientifically\n# interesting sub-claim (does order/typing help?) is inconclusive on this toy.\n\ndecision: continue\n# continue = proceed on this branch to the next experiment. The redirect to\n# order-importance (rather than assuming transition structure is validated) is\n# recorded via the run close --next-slug and the run_summary claim_delta.\n",
+    "path": "experiments/phase0-toy-semantic-retrieval/experiment_result.yaml"
+  }
+}

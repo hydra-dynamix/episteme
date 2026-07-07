@@ -1,0 +1,39 @@
+{
+  "additive_ambiguity_counts": [
+    1,
+    1,
+    1
+  ],
+  "additive_transition_counts": [],
+  "ambiguity_records": "/home/bakobi/repos/bako/research/ecphory-2/results/ambiguous-constraint-basin-stability/ambiguity_records.jsonl",
+  "ambiguous_surface_count": 3,
+  "ambiguous_surface_multi_basin_rate": 1,
+  "boundary": "Semantic-memory mechanism experiment. The substrate is an anonymous constraint field; labels and composition names are evaluation-only payload after local relaxation.",
+  "composition_records": "/home/bakobi/repos/bako/research/ecphory-2/results/ambiguous-constraint-basin-stability/composition_records.jsonl",
+  "composition_success_rate": 1,
+  "context_resolution_accuracy": 1,
+  "context_resolution_records": "/home/bakobi/repos/bako/research/ecphory-2/results/ambiguous-constraint-basin-stability/context_resolution_records.jsonl",
+  "continuous_refinement_final_accuracy": 1,
+  "continuous_refinement_records": "/home/bakobi/repos/bako/research/ecphory-2/results/ambiguous-constraint-basin-stability/continuous_refinement_records.jsonl",
+  "forced_choice_mean_expected_utility_on_ties": 0.466667,
+  "mean_first_additive_ambiguity_competitor_count": 1,
+  "mean_first_additive_transition_competitor_count": null,
+  "mean_first_replacement_ambiguity_competitor_count": 1,
+  "mean_first_replacement_transition_competitor_count": 3,
+  "perturbation_records": "/home/bakobi/repos/bako/research/ecphory-2/results/ambiguous-constraint-basin-stability/perturbation_records.jsonl",
+  "replacement_ambiguity_counts": [
+    1,
+    1,
+    1
+  ],
+  "replacement_transition_counts": [
+    3,
+    3,
+    3
+  ],
+  "schema_version": "ambiguous-constraint-basin-stability-report/v1",
+  "supports_projection_hypothesis": true,
+  "threshold": 0.5,
+  "tie_policy_lift_vs_forced_choice_on_ties": 0.233333,
+  "tie_policy_mean_expected_utility_on_ties": 0.7
+}

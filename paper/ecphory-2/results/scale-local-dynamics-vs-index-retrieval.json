@@ -1,0 +1,162 @@
+{
+  "ambiguity_tie_utility": {
+    "index_cosine_mean_active_size_on_bare": 1,
+    "index_cosine_mean_tie_utility": 0.925,
+    "index_cosine_spurious_cross_rate": 0.0,
+    "index_cosine_tie_preserved_rate": 0.85,
+    "index_overlap_mean_tie_utility": 0.925,
+    "relax_mean_active_size_on_bare": 1,
+    "relax_mean_tie_utility": 0.925,
+    "relax_spurious_cross_rate": 0.0,
+    "relax_tie_preserved_rate": 0.85
+  },
+  "ambiguous_corpus": {
+    "mean_basins_per_surface": 3.175,
+    "n_basins": 127,
+    "n_distractor_tokens": 60,
+    "n_shared_tokens": 12,
+    "n_surfaces": 40,
+    "seed": 42
+  },
+  "boundary": "Scaled synthetic-substrate experiment comparing local relaxation dynamics (run-32, verbatim) against a nearest-neighbor/index retrieval baseline (1-NN cosine/overlap, no spreading) on run-43 ambiguous + run-44 composition corpora, across context resolution, ambiguity/tie utility, composition, and a label-fragmentation sweep. NOT an Orbit Wars episode/turn/trace or behavioral result (per docs/vocabulary.md).",
+  "composition": {
+    "completion_frac_index_structural_zero": 0.0,
+    "completion_frac_relax": 1.0,
+    "completion_relax_minus_index": 1.0,
+    "cross_axis_intersection_disambiguates": false,
+    "exact_combo_rate_relax": 1.0,
+    "full_combo_still_ambiguous_tie": true,
+    "identification_rate_index_cosine": 1.0,
+    "identification_rate_index_overlap": 1.0,
+    "identification_rate_relax": 1.0,
+    "n_combos": 625,
+    "note": "Completion is a reconstructive CLOSURE operation (spreading activates unseeded privates); index retrieval has no spreading operator and structurally cannot complete. Identification is a retrieval act and is compared directly."
+  },
+  "context_resolution": {
+    "index_cosine_failure_modes": {
+      "correct_sole_winner": 127
+    },
+    "index_cosine_top1_accuracy": 1.0,
+    "index_overlap_failure_modes": {
+      "correct_sole_winner": 127
+    },
+    "index_overlap_top1_accuracy": 1.0,
+    "relax_failure_modes": {
+      "correct_sole_winner": 123,
+      "tie_including_target": 4
+    },
+    "relax_top1_accuracy": 0.968504
+  },
+  "controls": {
+    "label_null_shuffled_expected_on_context": {
+      "chance_baseline": 0.007874,
+      "label_alignment_gap": 0.968504,
+      "mean_null_accuracy": 0.0,
+      "n_reshuffle": 20,
+      "real_accuracy": 0.968504
+    },
+    "structure_null_edge_permutation_on_context": {
+      "mean_bare_tie_preserved_rate": 0.85,
+      "mean_context_accuracy": 1.0,
+      "mean_fraction_edges_changed": 0.992492,
+      "n_perm": 8
+    }
+  },
+  "headline_facts": {
+    "any_broad_metric_win_for_relax": false,
+    "index_better_or_equal_at_every_fragmentation_cell": true,
+    "relax_beats_index_composition_identification": false,
+    "relax_beats_index_context_top1": false,
+    "relax_beats_index_tie_utility": false,
+    "relax_better_at_any_fragmentation_cell": false,
+    "relax_only_completion_structural": true,
+    "robust_tie_utility_win_any_seed": false
+  },
+  "label_fragmentation_sweep": [
+    {
+      "config": "basin_counts=(2, 3)",
+      "context_gap_relax_minus_index_cosine": -0.021053,
+      "context_top1_index_cosine": 1.0,
+      "context_top1_index_overlap": 1.0,
+      "context_top1_relax": 0.978947,
+      "mean_basins_per_surface": 2.375,
+      "n_basins": 95,
+      "n_surfaces": 40,
+      "seed": 42,
+      "tie_utility_gap_relax_minus_index_cosine": 0.0,
+      "tie_utility_index_cosine": 0.825,
+      "tie_utility_index_overlap": 0.825,
+      "tie_utility_relax": 0.825
+    },
+    {
+      "config": "basin_counts=(2, 3, 4, 5)",
+      "context_gap_relax_minus_index_cosine": -0.031496,
+      "context_top1_index_cosine": 1.0,
+      "context_top1_index_overlap": 1.0,
+      "context_top1_relax": 0.968504,
+      "mean_basins_per_surface": 3.175,
+      "n_basins": 127,
+      "n_surfaces": 40,
+      "seed": 42,
+      "tie_utility_gap_relax_minus_index_cosine": 0.0,
+      "tie_utility_index_cosine": 0.925,
+      "tie_utility_index_overlap": 0.925,
+      "tie_utility_relax": 0.925
+    },
+    {
+      "config": "basin_counts=(4, 5, 6)",
+      "context_gap_relax_minus_index_cosine": -0.01005,
+      "context_top1_index_cosine": 1.0,
+      "context_top1_index_overlap": 1.0,
+      "context_top1_relax": 0.98995,
+      "mean_basins_per_surface": 4.975,
+      "n_basins": 199,
+      "n_surfaces": 40,
+      "seed": 42,
+      "tie_utility_gap_relax_minus_index_cosine": 0.0,
+      "tie_utility_index_cosine": 0.9875,
+      "tie_utility_index_overlap": 0.9875,
+      "tie_utility_relax": 0.9875
+    },
+    {
+      "config": "basin_counts=(5, 6, 7, 8)",
+      "context_gap_relax_minus_index_cosine": 0.0,
+      "context_top1_index_cosine": 1.0,
+      "context_top1_index_overlap": 1.0,
+      "context_top1_relax": 1.0,
+      "mean_basins_per_surface": 6.175,
+      "n_basins": 247,
+      "n_surfaces": 40,
+      "seed": 42,
+      "tie_utility_gap_relax_minus_index_cosine": 0.0,
+      "tie_utility_index_cosine": 1.0,
+      "tie_utility_index_overlap": 1.0,
+      "tie_utility_relax": 1.0
+    }
+  ],
+  "mechanism": {
+    "knn_index": "1-NN, cosine |q\u2229b|/sqrt(|q||b|) and overlap |q\u2229b|/|b|, no spreading",
+    "relax": "imported verbatim from run_ambiguous_constraint_basin_stability",
+    "run32_canon_invariants_asserted": true,
+    "theta": 0.5
+  },
+  "outcome": "falsified",
+  "robustness_extra_seeds": [
+    {
+      "context_top1_index_cosine": 1.0,
+      "context_top1_relax": 0.983471,
+      "seed": 7,
+      "tie_utility_index_cosine": 0.9,
+      "tie_utility_relax": 0.9
+    },
+    {
+      "context_top1_index_cosine": 1.0,
+      "context_top1_relax": 0.985185,
+      "seed": 123,
+      "tie_utility_index_cosine": 0.95,
+      "tie_utility_relax": 0.95
+    }
+  ],
+  "schema": "scale-local-dynamics-vs-index-retrieval/v1",
+  "substrate": "run-32 relax (verbatim) + run-43 ambiguous corpus + run-44 composition corpus; index retrieval = 1-NN cosine/overlap with no spreading"
+}

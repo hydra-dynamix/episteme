@@ -1,0 +1,74 @@
+{
+  "accuracy_lift_vs_shuffled": 1.0,
+  "basin_count": 4,
+  "basin_threshold": 0.35,
+  "basin_threshold_sweep": [
+    {
+      "basin_count": 4,
+      "mean_basin_size": 7.5,
+      "mean_purity": 0.75,
+      "mean_reusable_basin_purity": 0.75,
+      "mean_reusable_basin_size": 7.5,
+      "reusable_basin_count": 4,
+      "threshold": 0.25
+    },
+    {
+      "basin_count": 4,
+      "mean_basin_size": 7.5,
+      "mean_purity": 0.75,
+      "mean_reusable_basin_purity": 0.75,
+      "mean_reusable_basin_size": 7.5,
+      "reusable_basin_count": 4,
+      "threshold": 0.3
+    },
+    {
+      "basin_count": 4,
+      "mean_basin_size": 7.5,
+      "mean_purity": 0.75,
+      "mean_reusable_basin_purity": 0.75,
+      "mean_reusable_basin_size": 7.5,
+      "reusable_basin_count": 4,
+      "threshold": 0.35
+    },
+    {
+      "basin_count": 6,
+      "mean_basin_size": 5,
+      "mean_purity": 1.0,
+      "mean_reusable_basin_purity": 1.0,
+      "mean_reusable_basin_size": 5,
+      "reusable_basin_count": 6,
+      "threshold": 0.4
+    },
+    {
+      "basin_count": 12,
+      "mean_basin_size": 2.5,
+      "mean_purity": 1.0,
+      "mean_reusable_basin_purity": 1.0,
+      "mean_reusable_basin_size": 4,
+      "reusable_basin_count": 6,
+      "threshold": 0.45
+    },
+    {
+      "basin_count": 12,
+      "mean_basin_size": 2.5,
+      "mean_purity": 1.0,
+      "mean_reusable_basin_purity": 1.0,
+      "mean_reusable_basin_size": 4,
+      "reusable_basin_count": 6,
+      "threshold": 0.5
+    }
+  ],
+  "basins": "/home/bakobi/repos/bako/research/ecphory-2/results/unlabeled-constraint-basin-pilot/basins.json",
+  "boundary": "Lookup and basin formation use anonymous constraint structure only. Human labels are revealed only after lookup for evaluation.",
+  "mean_basin_purity_after_lookup": 0.75,
+  "mean_basin_size": 7.5,
+  "query_accuracy_after_lookup": 1.0,
+  "query_count": 12,
+  "query_inputs": "/home/bakobi/repos/bako/research/ecphory-2/results/unlabeled-constraint-basin-pilot/query_inputs.jsonl",
+  "query_results": "/home/bakobi/repos/bako/research/ecphory-2/results/unlabeled-constraint-basin-pilot/query_results.jsonl",
+  "schema_version": "unlabeled-constraint-basin-report/v1",
+  "shuffled_label_accuracy": 0.0,
+  "top_k": 5,
+  "train_count": 30,
+  "train_records": "/home/bakobi/repos/bako/research/ecphory-2/results/unlabeled-constraint-basin-pilot/train_records.jsonl"
+}

@@ -1,0 +1,72 @@
+{
+  "boundary": "The lookup key is the identity-free canonical prefix trace from a short window. Success, labels, regimes, actions, outcomes, and suffixes are post-lookup evaluation or hydrated payload only.",
+  "candidate_records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-scenarios/trajectory_memory_v1_candidate_records.jsonl",
+  "coverage": {
+    "covered_target_count": 252,
+    "covered_target_member_counts": {
+      "critical-save-heldout-production-107-p1": 75,
+      "expand-correct-heldout-turtle-102-p1": 31,
+      "expand-trap-heldout-contest-103-p1": 51,
+      "frontier-contest-heldout-aggressive-106-p1": 95
+    },
+    "covered_target_rate": 0.878049
+  },
+  "evidence_set": {
+    "candidate_set_size": {
+      "max": 138,
+      "mean": 43.599206
+    },
+    "non_successful_futures_on_covered": {
+      "max": 76,
+      "mean": 22.492063
+    },
+    "successful_futures_on_covered": {
+      "max": 62,
+      "mean": 21.107143
+    }
+  },
+  "memory_corpus": {
+    "heldout_window_count": 589,
+    "indexed_prefix_count": 75,
+    "train_window_count": 628,
+    "unique_train_full_signatures": 361
+  },
+  "post_lookup_success_refinement": {
+    "covered_queries_with_no_successful_trace": 2,
+    "covered_queries_with_single_successful_trace": 12,
+    "note": "This refinement is post-lookup evaluation over hydrated evidence. It is not part of the topology lookup key.",
+    "refined_candidate_set_size": {
+      "max": 62,
+      "mean": 21.107143
+    },
+    "single_successful_trace_rate_on_covered": 0.047619
+  },
+  "records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-lookup/windowed_topology_suffix_retrieval_records.jsonl",
+  "result_boundary": "This is retrieval evidence and target-inclusion measurement, not behavioral policy validation.",
+  "schema_version": "windowed-topology-suffix-retrieval-report/v1",
+  "settings": {
+    "min_support": 1,
+    "prefix_fraction": 0.5,
+    "stride": 3,
+    "success_criterion": "remaining_turns > 0 and advantage_delta_to_window_end >= 0.1 and final_window_regime == AHEAD",
+    "window_max": 12,
+    "window_min": 8
+  },
+  "target_inclusion": {
+    "exact_suffix_included_count": 112,
+    "exact_suffix_included_rate_on_covered": 0.444444,
+    "exact_suffix_included_rate_on_targets": 0.390244,
+    "successful_evidence_included_count": 250,
+    "successful_evidence_included_rate_on_covered": 0.992063,
+    "successful_evidence_included_rate_on_targets": 0.87108
+  },
+  "target_selection": {
+    "selected_successful_target_count": 287,
+    "selected_successful_target_member_counts": {
+      "critical-save-heldout-production-107-p1": 77,
+      "expand-correct-heldout-turtle-102-p1": 50,
+      "expand-trap-heldout-contest-103-p1": 58,
+      "frontier-contest-heldout-aggressive-106-p1": 102
+    }
+  }
+}

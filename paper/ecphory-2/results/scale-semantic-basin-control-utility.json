@@ -1,0 +1,175 @@
+{
+  "action_surface": {
+    "has_hold_safe_action": true,
+    "k_affordance": 2,
+    "larger_than_basin_count": true,
+    "n_actions_total": 208,
+    "n_distractor_actions": 80,
+    "n_primary_actions": 127,
+    "u_hold": 0.5,
+    "u_optimal": 1.0,
+    "u_wrong": -0.3
+  },
+  "boundary": "Scaled synthetic-substrate experiment: run-32 relax (verbatim) + run-43 corpus (verbatim) connected to a larger action/control surface; semantic channels vs label-first and no-semantic baselines on context / bare-ambiguous / partial query regimes. NOT an Orbit Wars episode/turn/trace or behavioral result (per docs/vocabulary.md).",
+  "corpus": {
+    "mean_basins_per_surface": 3.175,
+    "n_basins": 127,
+    "n_distractor_tokens": 60,
+    "n_shared_tokens": 12,
+    "n_surfaces": 40,
+    "seed": 42
+  },
+  "headline_facts": {
+    "active_set_closure_recovers_unseeded_affordance_on_partial": true,
+    "bare_gap_semantic_minus_label_first": {
+      "M0_no_semantic": 0.337417,
+      "M1_index_label_first": 0.0,
+      "M2_relax_posthoc_label": 0.0,
+      "M3_relax_unlabeled_active": 0.237417,
+      "M4_tie_defer_safe": 0.304084
+    },
+    "bare_semantic_win_over_label_first_is_hold_artifact": true,
+    "bare_utility": {
+      "M0_no_semantic": 0.5,
+      "M1_index_label_first": 0.162583,
+      "M2_relax_posthoc_label": 0.162583,
+      "M3_relax_unlabeled_active": 0.4,
+      "M4_tie_defer_safe": 0.466667
+    },
+    "context_gap_semantic_minus_label_first": {
+      "M0_no_semantic": -0.5,
+      "M1_index_label_first": 0.0,
+      "M2_relax_posthoc_label": -0.020472,
+      "M3_relax_unlabeled_active": -0.020472,
+      "M4_tie_defer_safe": -0.015748
+    },
+    "context_utility": {
+      "M0_no_semantic": 0.5,
+      "M1_index_label_first": 1.0,
+      "M2_relax_posthoc_label": 0.979528,
+      "M3_relax_unlabeled_active": 0.979528,
+      "M4_tie_defer_safe": 0.984252
+    },
+    "label_first_best_on_identifiable_queries": true,
+    "no_semantic_best_on_ambiguous_queries": true,
+    "partial_gap_semantic_minus_label_first": {
+      "M0_no_semantic": -0.5,
+      "M1_index_label_first": 0.0,
+      "M2_relax_posthoc_label": -0.020472,
+      "M3_relax_unlabeled_active": -0.020472,
+      "M4_tie_defer_safe": -0.015748
+    },
+    "partial_utility": {
+      "M0_no_semantic": 0.5,
+      "M1_index_label_first": 1.0,
+      "M2_relax_posthoc_label": 0.979528,
+      "M3_relax_unlabeled_active": 0.979528,
+      "M4_tie_defer_safe": 0.984252
+    },
+    "robust_semantic_unique_control_win": false,
+    "semantic_never_dominates_any_regime": true,
+    "semantic_unique_control_win_any_regime": false,
+    "semantic_unique_win_per_regime": {
+      "bare": false,
+      "context": false,
+      "partial": false
+    }
+  },
+  "hypothesis": "On a larger action/control surface the semantic channels (unlabeled active-set affordance M3, labeled post-hoc commit M2, tie-defer M4) beat no-semantic (M0) but NONE strictly beats label-first/index (M1) -- the run-46 relax==index retrieval ceiling binds at the control level.",
+  "label_null_shuffled_optimal": {
+    "mean_M2_context_utility": 0.979528,
+    "mean_M3_context_utility": -0.3,
+    "n_reshuffle": 20
+  },
+  "mechanism": {
+    "index_label_first": "resolve_knn from run_scale_local_dynamics_vs_index_retrieval (1-NN cosine, no spreading)",
+    "relax": "imported verbatim from run_ambiguous_constraint_basin_stability",
+    "run32_canon_invariants_asserted": true,
+    "theta": 0.5
+  },
+  "outcome": "falsified",
+  "regimes": {
+    "bare": {
+      "mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.162583,
+        "M2_relax_posthoc_label": 0.162583,
+        "M3_relax_unlabeled_active": 0.4,
+        "M4_tie_defer_safe": 0.466667
+      },
+      "n": 40
+    },
+    "context": {
+      "mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M2_relax_posthoc_label": 0.979528,
+        "M3_relax_unlabeled_active": 0.979528,
+        "M4_tie_defer_safe": 0.984252
+      },
+      "n": 127
+    },
+    "partial": {
+      "mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M2_relax_posthoc_label": 0.979528,
+        "M3_relax_unlabeled_active": 0.979528,
+        "M4_tie_defer_safe": 0.984252
+      },
+      "n": 127
+    }
+  },
+  "robustness_extra_seeds": [
+    {
+      "bare": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.186958,
+        "M2_relax_posthoc_label": 0.186958,
+        "M3_relax_unlabeled_active": 0.3,
+        "M4_tie_defer_safe": 0.464583
+      },
+      "context": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M2_relax_posthoc_label": 0.989256,
+        "M3_relax_unlabeled_active": 0.989256,
+        "M4_tie_defer_safe": 0.991736
+      },
+      "partial": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M2_relax_posthoc_label": 0.989256,
+        "M3_relax_unlabeled_active": 0.989256,
+        "M4_tie_defer_safe": 0.991736
+      },
+      "seed": 7
+    },
+    {
+      "bare": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.140375,
+        "M2_relax_posthoc_label": 0.140375,
+        "M3_relax_unlabeled_active": 0.4,
+        "M4_tie_defer_safe": 0.47525
+      },
+      "context": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M2_relax_posthoc_label": 0.99037,
+        "M3_relax_unlabeled_active": 0.99037,
+        "M4_tie_defer_safe": 0.992593
+      },
+      "partial": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M2_relax_posthoc_label": 0.99037,
+        "M3_relax_unlabeled_active": 0.99037,
+        "M4_tie_defer_safe": 0.992593
+      },
+      "seed": 123
+    }
+  ],
+  "schema": "scale-semantic-basin-control-utility/v1",
+  "substrate": "run-32 relax (verbatim) + run-43 ambiguous corpus (verbatim); index baseline resolve_knn (run-46 verbatim); ONLY the action surface + action choosers are new"
+}

@@ -1,0 +1,238 @@
+{
+  "action_surface": {
+    "k_affordance": 2,
+    "larger_than_basin_count": true,
+    "n_actions_total": 208,
+    "n_distractor_actions": 80,
+    "n_primary_actions": 127
+  },
+  "boundary": "Scaled synthetic-substrate experiment: an identity-free trajectory-motif -> anonymous-constraint bridge (NEW) feeds the run-32 relaxation substrate and a 1-NN index baseline + run-47 action choosers (all verbatim), compared on interpretation (top-1 / tie-utility) and control (action utility) across clean anchored/bare/partial and lossy-perturbed regimes. NOT an Orbit Wars episode/turn/trace or behavioral result (per docs/vocabulary.md).",
+  "corpus": {
+    "mean_basins_per_surface": 3.175,
+    "n_basins": 127,
+    "n_distractor_tokens": 60,
+    "n_event_tokens": 2241,
+    "n_motifs": 381,
+    "n_shared_tokens": 12,
+    "n_surfaces": 40,
+    "seed": 42
+  },
+  "headline_facts": {
+    "bridge_label_aligned_above_null": true,
+    "bridge_transparent_on_clean": true,
+    "control_relax_beats_best_index_any_regime": false,
+    "control_relax_beats_best_index_per_regime": {
+      "anchored": false,
+      "bare": false,
+      "lossy_mild": false,
+      "lossy_strong": false,
+      "partial": false
+    },
+    "control_semantic_unique_win_any_regime": true,
+    "control_semantic_unique_win_per_regime": {
+      "anchored": false,
+      "bare": false,
+      "lossy_mild": false,
+      "lossy_strong": true,
+      "partial": false
+    },
+    "interp_relax_beats_index_any_regime": false,
+    "interp_relax_beats_index_per_regime": {
+      "anchored": false,
+      "bare": false,
+      "lossy_mild": false,
+      "lossy_strong": false,
+      "partial": false
+    },
+    "robust_control_relax_beats_best_index_any_seed": false,
+    "robust_control_semantic_unique_win_any_seed": true,
+    "robust_interp_relax_beats_index_any_seed": false
+  },
+  "hypothesis": "Routing basin identification/control through an identity-free trajectory-motif -> anonymous-constraint bridge does NOT change the relax==index ceiling: no relaxation channel beats the 1-NN index/label-first baseline on interpretation (top-1 / tie-utility) or control (action utility) on any regime (clean anchored/bare/partial + lossy-perturbed). Falsified-as-predicted => the synthetic constraint-field line closes (3rd independent negative).",
+  "label_null_shuffled_expected": {
+    "chance_baseline": 0.007874,
+    "mean_null_index_top1": 0.0,
+    "mean_null_relax_top1": 0.0,
+    "n": 127
+  },
+  "mechanism": {
+    "action_surface_choosers": "imported verbatim from run_scale_semantic_basin_control_utility",
+    "bridge": "NEW: content-addressed event vocab + frozenset motif signature + identity-free jaccard lookup",
+    "ev_per_constraint": 3,
+    "index": "resolve_knn from run_scale_local_dynamics_vs_index_retrieval (1-NN cosine, no spreading)",
+    "relax": "imported verbatim from run_ambiguous_constraint_basin_stability (via run-46)",
+    "run32_canon_invariants_asserted": true,
+    "theta": 0.5
+  },
+  "outcome": "falsified",
+  "regimes_clean": {
+    "anchored": {
+      "bridge": {
+        "lookup_correct_emission_rate": 1.0,
+        "mean_lookup_overlap": 1.0
+      },
+      "control_mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M1b_index_tie_defer": 1.0,
+        "M2_relax_posthoc_label": 0.979528,
+        "M3_relax_unlabeled_active": 0.979528,
+        "M4_tie_defer_safe": 0.984252
+      },
+      "interpretation": {
+        "index_tiedefer_top1_mean": 1.0,
+        "index_top1_mean": 1.0,
+        "m4_top1_mean": 0.968504,
+        "relax_gt_index": false,
+        "relax_top1_mean": 0.968504
+      },
+      "n": 127
+    },
+    "bare": {
+      "bridge": {
+        "lookup_correct_emission_rate": 1.0,
+        "mean_lookup_overlap": 1.0
+      },
+      "control_mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.109449,
+        "M1b_index_tie_defer": 0.473228,
+        "M2_relax_posthoc_label": 0.109449,
+        "M3_relax_unlabeled_active": 0.411811,
+        "M4_tie_defer_safe": 0.473228
+      },
+      "interpretation": {
+        "index_tiedefer_top1_mean": 0.055118,
+        "index_top1_mean": 0.944882,
+        "m4_top1_mean": 0.055118,
+        "relax_gt_index": false,
+        "relax_top1_mean": 0.944882
+      },
+      "n": 127
+    },
+    "partial": {
+      "bridge": {
+        "lookup_correct_emission_rate": 1.0,
+        "mean_lookup_overlap": 1.0
+      },
+      "control_mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M1b_index_tie_defer": 1.0,
+        "M2_relax_posthoc_label": 0.979528,
+        "M3_relax_unlabeled_active": 0.979528,
+        "M4_tie_defer_safe": 0.984252
+      },
+      "interpretation": {
+        "index_tiedefer_top1_mean": 1.0,
+        "index_top1_mean": 1.0,
+        "m4_top1_mean": 0.968504,
+        "relax_gt_index": false,
+        "relax_top1_mean": 0.968504
+      },
+      "n": 127
+    }
+  },
+  "regimes_lossy": [
+    {
+      "a": 2,
+      "bridge": {
+        "lookup_correct_emission_rate": 0.952756,
+        "mean_lookup_overlap": 0.637796
+      },
+      "control_mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M1b_index_tie_defer": 1.0,
+        "M2_relax_posthoc_label": 0.979528,
+        "M3_relax_unlabeled_active": 0.979528,
+        "M4_tie_defer_safe": 0.984252
+      },
+      "d": 2,
+      "interpretation": {
+        "index_tiedefer_top1_mean": 1.0,
+        "index_top1_mean": 1.0,
+        "m4_top1_mean": 0.968504,
+        "relax_gt_index": false,
+        "relax_top1_mean": 0.968504
+      },
+      "n": 127,
+      "name": "lossy_mild"
+    },
+    {
+      "a": 6,
+      "bridge": {
+        "lookup_correct_emission_rate": 0.897638,
+        "mean_lookup_overlap": 0.274054
+      },
+      "control_mean_utility_by_mechanism": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.959055,
+        "M1b_index_tie_defer": 0.976378,
+        "M2_relax_posthoc_label": 0.938583,
+        "M3_relax_unlabeled_active": 0.949606,
+        "M4_tie_defer_safe": 0.96063
+      },
+      "d": 5,
+      "interpretation": {
+        "index_tiedefer_top1_mean": 0.952756,
+        "index_top1_mean": 0.952756,
+        "m4_top1_mean": 0.92126,
+        "relax_gt_index": false,
+        "relax_top1_mean": 0.92126
+      },
+      "n": 127,
+      "name": "lossy_strong"
+    }
+  ],
+  "robustness_extra_seeds": [
+    {
+      "anchored_control": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M1b_index_tie_defer": 1.0,
+        "M2_relax_posthoc_label": 0.989256,
+        "M3_relax_unlabeled_active": 0.989256,
+        "M4_tie_defer_safe": 0.991736
+      },
+      "anchored_interp_index": 1.0,
+      "anchored_interp_relax": 0.983471,
+      "lossy_strong_control": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.989256,
+        "M1b_index_tie_defer": 0.987603,
+        "M2_relax_posthoc_label": 0.978512,
+        "M3_relax_unlabeled_active": 0.970248,
+        "M4_tie_defer_safe": 0.979339
+      },
+      "lossy_strong_interp_index": 0.975207,
+      "lossy_strong_interp_relax": 0.958678,
+      "seed": 7
+    },
+    {
+      "anchored_control": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 1.0,
+        "M1b_index_tie_defer": 1.0,
+        "M2_relax_posthoc_label": 0.99037,
+        "M3_relax_unlabeled_active": 0.99037,
+        "M4_tie_defer_safe": 0.992593
+      },
+      "anchored_interp_index": 1.0,
+      "anchored_interp_relax": 0.985185,
+      "lossy_strong_control": {
+        "M0_no_semantic": 0.5,
+        "M1_index_label_first": 0.932593,
+        "M1b_index_tie_defer": 0.968148,
+        "M2_relax_posthoc_label": 0.922963,
+        "M3_relax_unlabeled_active": 0.958519,
+        "M4_tie_defer_safe": 0.960741
+      },
+      "lossy_strong_interp_index": 0.948148,
+      "lossy_strong_interp_relax": 0.933333,
+      "seed": 123
+    }
+  ],
+  "schema": "scale-trajectory-to-semantic-basin-bridge/v1",
+  "substrate": "run-32 relax (verbatim, via run-46 resolve_relax) + run-43 ambiguous corpus (verbatim) + run-46 resolve_knn (verbatim) + run-47 action surface + choosers (verbatim); ONLY the trajectory-motif bridge (event vocab, motifs/signatures, identity-free lookup_emit, perturbation) is new"
+}

@@ -1,0 +1,18 @@
+{
+  "baseline_mean_expected_concept_recall_without_trajectory": 1.0,
+  "baseline_mean_expected_top_concept_recall_without_trajectory": 0.833333,
+  "boundary": "Dual-substrate pilot. Trajectory memory retrieves motif futures by identity-free temporal topology. Semantic memory retrieves labeled constraint neighborhoods. The bridge is post-lookup constraints.",
+  "mean_expected_concept_recall": 1.0,
+  "mean_expected_top_concept_recall": 0.666667,
+  "mean_semantic_lift_from_trajectory_constraints": 0.0,
+  "mean_top_concept_lift_from_trajectory_constraints": -0.166667,
+  "mean_top_margin_lift_from_trajectory_constraints": 0.111111,
+  "mean_top_score_lift_from_trajectory_constraints": 0.0,
+  "mean_trajectory_evidence_count": 2,
+  "query_count": 3,
+  "query_records": "/home/bakobi/repos/bako/research/ecphory-2/results/dual-memory-semantic-neighborhood/query_records.jsonl",
+  "schema_version": "dual-memory-semantic-neighborhood-report/v1",
+  "semantic_records": "/home/bakobi/repos/bako/research/ecphory-2/results/dual-memory-semantic-neighborhood/semantic_records.jsonl",
+  "trajectory_motif_accuracy": 1.0,
+  "trajectory_records": "/home/bakobi/repos/bako/research/ecphory-2/results/dual-memory-semantic-neighborhood/trajectory_records.jsonl"
+}

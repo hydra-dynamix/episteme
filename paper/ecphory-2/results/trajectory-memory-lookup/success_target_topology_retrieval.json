@@ -1,0 +1,43 @@
+{
+  "boundary": "Target success is a post-hoc evaluation filter. Lookup remains blind to success, outcome, strategic labels, regimes, actions, and suffixes.",
+  "candidate_records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-scenarios/trajectory_memory_v1_candidate_records.jsonl",
+  "coverage": {
+    "covered_target_count": 15,
+    "covered_target_member_counts": {
+      "critical-save-heldout-production-107-p1": 3,
+      "expand-correct-heldout-turtle-102-p1": 2,
+      "expand-trap-heldout-contest-103-p1": 5,
+      "frontier-contest-heldout-aggressive-106-p1": 5
+    },
+    "covered_target_rate": 0.081967
+  },
+  "evidence_set": {
+    "max_candidate_set_size_on_covered": 4,
+    "mean_candidate_set_size_on_covered": 2.466667,
+    "mean_non_successful_futures_on_covered": 0.0,
+    "mean_successful_futures_on_covered": 2.466667
+  },
+  "lookup_key": "temporal_topology.prefix_signature.key",
+  "records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-lookup/success_target_topology_retrieval_records.jsonl",
+  "result_boundary": "This is retrieval evidence over successful withheld futures, not behavioral policy validation or proof of memory utility.",
+  "schema_version": "success-target-topology-retrieval-report/v1",
+  "target_inclusion": {
+    "exact_suffix_included_count": 0,
+    "exact_suffix_included_rate_on_covered": 0.0,
+    "exact_suffix_included_rate_on_targets": 0.0,
+    "successful_evidence_included_count": 15,
+    "successful_evidence_included_rate_on_covered": 1.0,
+    "successful_evidence_included_rate_on_targets": 0.081967
+  },
+  "target_selection": {
+    "selected_target_count": 183,
+    "selected_target_member_counts": {
+      "critical-save-heldout-production-107-p1": 49,
+      "expand-correct-heldout-turtle-102-p1": 33,
+      "expand-trap-heldout-contest-103-p1": 37,
+      "frontier-contest-heldout-aggressive-106-p1": 64
+    },
+    "split": "heldout",
+    "success_criterion": "remaining_turns > 0 and advantage_delta_to_window_end >= 0.1 and final_window_regime == AHEAD"
+  }
+}

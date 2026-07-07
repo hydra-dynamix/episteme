@@ -1,0 +1,72 @@
+{
+  "candidate_records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-scenarios/trajectory_memory_v1_candidate_records.jsonl",
+  "interpretation_boundary": "Surface retrieval is expected to have broader coverage because it ignores incoming transition history. This comparison measures retrieval coverage and possible-future payload diversity only; it does not validate policy behavior or memory utility.",
+  "query_overlap": {
+    "both_count": 17,
+    "sequence_only_count": 0,
+    "surface_only_count": 66
+  },
+  "schema_version": "sequence-vs-surface-retrieval-comparison/v1",
+  "sequence": {
+    "heldout_query_count": 385,
+    "heldout_query_with_train_neighborhood_count": 17,
+    "heldout_query_with_train_neighborhood_rate": 0.044156,
+    "largest_train_neighborhood_size": 3,
+    "lookup_key": "sequence_signature.canonical",
+    "lookup_records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-lookup/sequence_signature_lookup_records.jsonl",
+    "matched_query_member_counts": {
+      "expand-correct-heldout-turtle-102-p1": 6,
+      "expand-trap-heldout-contest-103-p1": 9,
+      "frontier-contest-heldout-aggressive-106-p1": 2
+    },
+    "payload_diversity_after_lookup": {
+      "max_future_transition_shapes": 3,
+      "max_train_label_options": 1,
+      "max_train_regime_options": 1,
+      "mean_future_transition_shapes": 2.235294,
+      "mean_train_label_options": 1.0,
+      "mean_train_regime_options": 1.0
+    },
+    "query_payload_label_coverage_after_lookup": {
+      "expand_is_correct": 6,
+      "expand_is_trap": 9,
+      "frontier_contest": 2
+    },
+    "train_payload_label_coverage_after_lookup": {
+      "critical_save_core": 3,
+      "frontier_contest": 35
+    }
+  },
+  "surface": {
+    "heldout_query_count": 385,
+    "heldout_query_with_train_neighborhood_count": 83,
+    "heldout_query_with_train_neighborhood_rate": 0.215584,
+    "largest_train_neighborhood_size": 19,
+    "lookup_key": "current_state_surface_token",
+    "lookup_records": "/home/bakobi/repos/bako/research/ecphory-2/results/trajectory-memory-lookup/surface_state_lookup_records.jsonl",
+    "matched_query_member_counts": {
+      "critical-save-heldout-production-107-p1": 13,
+      "expand-correct-heldout-turtle-102-p1": 26,
+      "expand-trap-heldout-contest-103-p1": 21,
+      "frontier-contest-heldout-aggressive-106-p1": 23
+    },
+    "payload_diversity_after_lookup": {
+      "max_future_transition_shapes": 10,
+      "max_train_label_options": 2,
+      "max_train_regime_options": 2,
+      "mean_future_transition_shapes": 5.819277,
+      "mean_train_label_options": 1.108434,
+      "mean_train_regime_options": 1.012048
+    },
+    "query_payload_label_coverage_after_lookup": {
+      "critical_save_core": 13,
+      "expand_is_correct": 26,
+      "expand_is_trap": 21,
+      "frontier_contest": 23
+    },
+    "train_payload_label_coverage_after_lookup": {
+      "critical_save_core": 177,
+      "frontier_contest": 605
+    }
+  }
+}

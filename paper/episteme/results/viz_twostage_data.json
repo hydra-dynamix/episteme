@@ -1,0 +1,2760 @@
+{
+ "pairs": [
+  {
+   "pair_id": 0,
+   "fa": "poly_A_000",
+   "fb": "poly_B_000",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_000-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_000-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_A_000-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_A_000-02-02",
+     "CONTRADICTS",
+     "out"
+    ],
+    [
+     "L-poly_A_000-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "V-poly_A_000-02-03",
+     "HAS_VERDICT",
+     "out"
+    ],
+    [
+     "L-poly_A_000-02-04",
+     "HAS_VERDICT",
+     "in"
+    ],
+    [
+     "K-poly_A_000-02-00",
+     "SUPPORTS",
+     "out"
+    ],
+    [
+     "L-poly_A_000-02-04",
+     "WEAKENS",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_000-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_000-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_B_000-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_B_000-02-02",
+     "CONTRADICTS",
+     "out"
+    ],
+    [
+     "L-poly_B_000-02-03",
+     "CONTRADICTS",
+     "in"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 24,
+     "fine_n": 12,
+     "coarse_fams": [
+      "gen_001",
+      "gen_007",
+      "gen_012",
+      "gen_013",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_001",
+      "gen_013",
+      "poly_A_000",
+      "poly_A_004",
+      "poly_B_000",
+      "poly_B_004"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 18,
+     "fine_n": 8,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_000",
+      "poly_A_004",
+      "poly_B_000",
+      "poly_B_004"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 18,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_000",
+      "poly_B_000"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000",
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_000"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 6,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000",
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_000"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000"
+     ],
+     "fine_fams": [
+      "poly_A_000"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000"
+     ],
+     "fine_fams": [
+      "poly_A_000"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000"
+     ],
+     "fine_fams": [
+      "poly_A_000"
+     ],
+     "fa": "poly_A_000",
+     "fb": "poly_B_000",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 1,
+   "fa": "poly_A_001",
+   "fb": "poly_B_001",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_001-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_001-02-01",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "K-poly_A_001-02-01",
+     "SUPERSEDED_BY",
+     "out"
+    ],
+    [
+     "K-poly_A_001-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "K-poly_A_001-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "K-poly_A_001-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_A_001-02-02",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "D-poly_A_001-02-03",
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "L-poly_A_001-02-04",
+     "IN_DOMAIN",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_001-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_001-02-01",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "K-poly_B_001-02-01",
+     "SUPERSEDED_BY",
+     "out"
+    ],
+    [
+     "K-poly_B_001-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_B_001-02-02",
+     "CONTRADICTS",
+     "in"
+    ],
+    [
+     "M-poly_B_001-02-03",
+     "USES_METHOD",
+     "out"
+    ],
+    [
+     "L-poly_B_001-02-04",
+     "USES_METHOD",
+     "in"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 48,
+     "fine_n": 6,
+     "coarse_fams": [
+      "gen_000",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "gen_019",
+      "poly_A_001",
+      "poly_B_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 6,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_003",
+      "poly_A_001",
+      "poly_B_001"
+     ],
+     "fine_fams": [
+      "poly_A_001",
+      "poly_B_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 4,
+     "fine_n": 4,
+     "coarse_fams": [
+      "poly_A_001",
+      "poly_B_001"
+     ],
+     "fine_fams": [
+      "poly_A_001",
+      "poly_B_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_001"
+     ],
+     "fine_fams": [
+      "poly_A_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 6,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_001"
+     ],
+     "fine_fams": [
+      "poly_A_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_001"
+     ],
+     "fine_fams": [
+      "poly_A_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_001"
+     ],
+     "fine_fams": [
+      "poly_A_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_001"
+     ],
+     "fine_fams": [
+      "poly_A_001"
+     ],
+     "fa": "poly_A_001",
+     "fb": "poly_B_001",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 2,
+   "fa": "poly_A_002",
+   "fb": "poly_B_002",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_002-02-00",
+     null,
+     null
+    ],
+    [
+     "L-poly_A_002-02-01",
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "D-poly_A_002-02-02",
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "L-poly_A_002-02-01",
+     "IN_DOMAIN",
+     "in"
+    ],
+    [
+     "K-poly_A_002-02-03",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "K-poly_A_002-02-03",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_A_002-02-04",
+     "CONTRADICTS",
+     "in"
+    ],
+    [
+     "K-poly_A_002-02-00",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "L-poly_A_002-02-04",
+     "WEAKENS",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_002-02-00",
+     null,
+     null
+    ],
+    [
+     "L-poly_B_002-02-01",
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "D-poly_B_002-02-02",
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "L-poly_B_002-02-01",
+     "IN_DOMAIN",
+     "in"
+    ],
+    [
+     "L-poly_B_002-02-03",
+     "CONTRADICTS",
+     "out"
+    ],
+    [
+     "M-poly_B_002-02-04",
+     "WEAKENS",
+     "in"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 48,
+     "fine_n": 8,
+     "coarse_fams": [
+      "gen_000",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "gen_002",
+      "gen_005",
+      "poly_A_002",
+      "poly_B_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 22,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_000",
+      "gen_002",
+      "gen_005",
+      "gen_006",
+      "gen_009",
+      "gen_011",
+      "gen_015",
+      "gen_016",
+      "gen_018",
+      "poly_A_002",
+      "poly_B_002"
+     ],
+     "fine_fams": [
+      "poly_A_002",
+      "poly_B_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 8,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_000",
+      "gen_005",
+      "poly_A_002",
+      "poly_B_002"
+     ],
+     "fine_fams": [
+      "poly_A_002",
+      "poly_B_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 6,
+     "fine_n": 2,
+     "coarse_fams": [
+      "gen_005",
+      "poly_A_002",
+      "poly_B_002"
+     ],
+     "fine_fams": [
+      "poly_A_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 6,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_002"
+     ],
+     "fine_fams": [
+      "poly_A_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_002"
+     ],
+     "fine_fams": [
+      "poly_A_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_002"
+     ],
+     "fine_fams": [
+      "poly_A_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_002"
+     ],
+     "fine_fams": [
+      "poly_A_002"
+     ],
+     "fa": "poly_A_002",
+     "fb": "poly_B_002",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 3,
+   "fa": "poly_A_003",
+   "fb": "poly_B_003",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_003-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_003-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "K-poly_A_003-02-01",
+     "DERIVES_FROM",
+     "in"
+    ],
+    [
+     "L-poly_A_003-02-02",
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "K-poly_A_003-02-00",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "K-poly_A_003-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "L-poly_A_003-02-02",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_A_003-02-01",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "L-poly_A_003-02-03",
+     "CONTRADICTS",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_003-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_003-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "K-poly_B_003-02-01",
+     "DERIVES_FROM",
+     "in"
+    ],
+    [
+     "L-poly_B_003-02-02",
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "Q-poly_B_003-02-03",
+     "MEASURES",
+     "out"
+    ],
+    [
+     "L-poly_B_003-02-04",
+     "MEASURES",
+     "in"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 24,
+     "fine_n": 12,
+     "coarse_fams": [
+      "gen_001",
+      "gen_007",
+      "gen_012",
+      "gen_013",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_007",
+      "gen_012",
+      "poly_A_003",
+      "poly_A_007",
+      "poly_B_003",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 18,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_003",
+      "poly_B_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 18,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_003",
+      "poly_B_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_003"
+     ],
+     "fine_fams": [
+      "poly_A_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 6,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_003"
+     ],
+     "fine_fams": [
+      "poly_A_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_003"
+     ],
+     "fine_fams": [
+      "poly_A_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_003"
+     ],
+     "fine_fams": [
+      "poly_A_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_003"
+     ],
+     "fine_fams": [
+      "poly_A_003"
+     ],
+     "fa": "poly_A_003",
+     "fb": "poly_B_003",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 4,
+   "fa": "poly_A_004",
+   "fb": "poly_B_004",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_004-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_004-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_A_004-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "Q-poly_A_004-02-02",
+     "MEASURES",
+     "out"
+    ],
+    [
+     "L-poly_A_004-02-01",
+     "MEASURES",
+     "in"
+    ],
+    [
+     "K-poly_A_004-02-03",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "K-poly_A_004-02-03",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "K-poly_A_004-02-03",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "L-poly_A_004-02-04",
+     "WEAKENS",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_004-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_004-02-00",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_B_004-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "Q-poly_B_004-02-02",
+     "MEASURES",
+     "out"
+    ],
+    [
+     "D-poly_B_004-02-03",
+     "MEASURES",
+     "in"
+    ],
+    [
+     "V-poly_B_004-02-04",
+     "IN_DOMAIN",
+     "out"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 24,
+     "fine_n": 12,
+     "coarse_fams": [
+      "gen_001",
+      "gen_007",
+      "gen_012",
+      "gen_013",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_001",
+      "gen_013",
+      "poly_A_000",
+      "poly_A_004",
+      "poly_B_000",
+      "poly_B_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 18,
+     "fine_n": 8,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_000",
+      "poly_A_004",
+      "poly_B_000",
+      "poly_B_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 18,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_004",
+      "poly_B_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000",
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 6,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_000",
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_004"
+     ],
+     "fine_fams": [
+      "poly_A_004"
+     ],
+     "fa": "poly_A_004",
+     "fb": "poly_B_004",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 5,
+   "fa": "poly_A_005",
+   "fb": "poly_B_005",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_005-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_005-02-01",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "K-poly_A_005-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "L-poly_A_005-02-02",
+     "CONTRADICTS",
+     "in"
+    ],
+    [
+     "K-poly_A_005-02-00",
+     "SUPPORTS",
+     "out"
+    ],
+    [
+     "K-poly_A_005-02-01",
+     "SUPERSEDED_BY",
+     "in"
+    ],
+    [
+     "L-poly_A_005-02-02",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "D-poly_A_005-02-03",
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "L-poly_A_005-02-04",
+     "IN_DOMAIN",
+     "in"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_005-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_005-02-01",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "K-poly_B_005-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "L-poly_B_005-02-02",
+     "CONTRADICTS",
+     "in"
+    ],
+    [
+     "V-poly_B_005-02-03",
+     "HAS_VERDICT",
+     "out"
+    ],
+    [
+     "L-poly_B_005-02-04",
+     "HAS_VERDICT",
+     "in"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 48,
+     "fine_n": 6,
+     "coarse_fams": [
+      "gen_000",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "gen_015",
+      "poly_A_005",
+      "poly_B_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 20,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_004",
+      "gen_008",
+      "gen_010",
+      "gen_014",
+      "gen_017",
+      "gen_019",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "poly_A_005",
+      "poly_B_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 14,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_004",
+      "gen_010",
+      "gen_017",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "poly_A_005",
+      "poly_B_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "gen_017",
+      "poly_A_005"
+     ],
+     "fine_fams": [
+      "poly_A_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 6,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "gen_017",
+      "poly_A_005"
+     ],
+     "fine_fams": [
+      "poly_A_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_005"
+     ],
+     "fine_fams": [
+      "poly_A_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_005"
+     ],
+     "fine_fams": [
+      "poly_A_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_005"
+     ],
+     "fine_fams": [
+      "poly_A_005"
+     ],
+     "fa": "poly_A_005",
+     "fb": "poly_B_005",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 6,
+   "fa": "poly_A_006",
+   "fb": "poly_B_006",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_006-02-00",
+     null,
+     null
+    ],
+    [
+     "L-poly_A_006-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_A_006-02-00",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "L-poly_A_006-02-02",
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "D-poly_A_006-02-03",
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "L-poly_A_006-02-02",
+     "IN_DOMAIN",
+     "in"
+    ],
+    [
+     "K-poly_A_006-02-04",
+     "SUPPORTS",
+     "out"
+    ],
+    [
+     "L-poly_A_006-02-02",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "M-poly_A_006-02-05",
+     "USES_METHOD",
+     "out"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_006-02-00",
+     null,
+     null
+    ],
+    [
+     "L-poly_B_006-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "K-poly_B_006-02-00",
+     "WEAKENS",
+     "out"
+    ],
+    [
+     "L-poly_B_006-02-02",
+     "SUPPORTS",
+     "in"
+    ],
+    [
+     "V-poly_B_006-02-03",
+     "CONTRADICTS",
+     "out"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 48,
+     "fine_n": 14,
+     "coarse_fams": [
+      "gen_000",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "gen_004",
+      "gen_006",
+      "gen_008",
+      "gen_009",
+      "gen_017",
+      "poly_A_006",
+      "poly_B_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 20,
+     "fine_n": 8,
+     "coarse_fams": [
+      "gen_004",
+      "gen_008",
+      "gen_010",
+      "gen_014",
+      "gen_017",
+      "gen_019",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "gen_004",
+      "gen_008",
+      "poly_A_006",
+      "poly_B_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 14,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_004",
+      "gen_010",
+      "gen_017",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "poly_A_006",
+      "poly_B_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 8,
+     "fine_n": 2,
+     "coarse_fams": [
+      "gen_010",
+      "poly_A_006",
+      "poly_B_005",
+      "poly_B_006"
+     ],
+     "fine_fams": [
+      "poly_A_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 6,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "gen_010",
+      "poly_A_006"
+     ],
+     "fine_fams": [
+      "poly_A_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 4,
+     "fine_n": 2,
+     "coarse_fams": [
+      "gen_010",
+      "poly_A_006"
+     ],
+     "fine_fams": [
+      "poly_A_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_006"
+     ],
+     "fine_fams": [
+      "poly_A_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_006"
+     ],
+     "fine_fams": [
+      "poly_A_006"
+     ],
+     "fa": "poly_A_006",
+     "fb": "poly_B_006",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  },
+  {
+   "pair_id": 7,
+   "fa": "poly_A_007",
+   "fb": "poly_B_007",
+   "share_k": 4,
+   "walk_a": [
+    [
+     "K-poly_A_007-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_A_007-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "L-poly_A_007-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "Q-poly_A_007-02-02",
+     "MEASURES",
+     "out"
+    ],
+    [
+     "L-poly_A_007-02-03",
+     "MEASURES",
+     "in"
+    ],
+    [
+     "D-poly_A_007-02-04",
+     "IN_DOMAIN",
+     "out"
+    ],
+    [
+     "L-poly_A_007-02-01",
+     "IN_DOMAIN",
+     "in"
+    ],
+    [
+     "K-poly_A_007-02-05",
+     "SUPPORTS",
+     "out"
+    ],
+    [
+     "K-poly_A_007-02-00",
+     "SUPERSEDED_BY",
+     "out"
+    ]
+   ],
+   "walk_b": [
+    [
+     "K-poly_B_007-02-00",
+     null,
+     null
+    ],
+    [
+     "K-poly_B_007-02-00",
+     "DERIVES_FROM",
+     "out"
+    ],
+    [
+     "L-poly_B_007-02-01",
+     "WEAKENS",
+     "in"
+    ],
+    [
+     "Q-poly_B_007-02-02",
+     "MEASURES",
+     "out"
+    ],
+    [
+     "K-poly_B_007-02-03",
+     "MEASURES",
+     "in"
+    ]
+   ],
+   "trajectory": [
+    {
+     "L": 1,
+     "coarse_n": 72,
+     "fine_n": 72,
+     "coarse_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_000",
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004",
+      "gen_005",
+      "gen_006",
+      "gen_007",
+      "gen_008",
+      "gen_009",
+      "gen_010",
+      "gen_011",
+      "gen_012",
+      "gen_013",
+      "gen_014",
+      "gen_015",
+      "gen_016",
+      "gen_017",
+      "gen_018",
+      "gen_019",
+      "poly_A_000",
+      "poly_A_001",
+      "poly_A_002",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_005",
+      "poly_A_006",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_001",
+      "poly_B_002",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_005",
+      "poly_B_006",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 2,
+     "coarse_n": 24,
+     "fine_n": 12,
+     "coarse_fams": [
+      "gen_001",
+      "gen_007",
+      "gen_012",
+      "gen_013",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "gen_007",
+      "gen_012",
+      "poly_A_003",
+      "poly_A_007",
+      "poly_B_003",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 3,
+     "coarse_n": 18,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_007",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 4,
+     "coarse_n": 18,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_000",
+      "poly_A_003",
+      "poly_A_004",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_007",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 5,
+     "coarse_n": 12,
+     "fine_n": 4,
+     "coarse_fams": [
+      "gen_007",
+      "poly_A_007",
+      "poly_B_000",
+      "poly_B_003",
+      "poly_B_004",
+      "poly_B_007"
+     ],
+     "fine_fams": [
+      "poly_A_007",
+      "poly_B_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": true
+    },
+    {
+     "L": 6,
+     "coarse_n": 6,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_007",
+      "poly_B_003",
+      "poly_B_004"
+     ],
+     "fine_fams": [
+      "poly_A_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 7,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_007"
+     ],
+     "fine_fams": [
+      "poly_A_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 8,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_007"
+     ],
+     "fine_fams": [
+      "poly_A_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    },
+    {
+     "L": 9,
+     "coarse_n": 2,
+     "fine_n": 2,
+     "coarse_fams": [
+      "poly_A_007"
+     ],
+     "fine_fams": [
+      "poly_A_007"
+     ],
+     "fa": "poly_A_007",
+     "fb": "poly_B_007",
+     "fa_in_coarse": true,
+     "fb_in_coarse": false
+    }
+   ]
+  }
+ ],
+ "aggregate": {
+  "n_idx": 72,
+  "inclusion": 1.0,
+  "coarse_mean": 2.0,
+  "fine_mean": 2.0,
+  "coarse_reduction": 36.0,
+  "fine_reduction": 36.0
+ },
+ "disjoint_example": {
+  "name": "gen_000",
+  "trace": [
+   0,
+   1,
+   2,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "node_roles": [
+   "claim",
+   "record",
+   "metric"
+  ],
+  "edge_labels": [
+   [
+    "CONTRADICTS",
+    "in"
+   ],
+   [
+    "MEASURES",
+    "out"
+   ],
+   [
+    "MEASURES",
+    "in"
+   ],
+   [
+    "CONTRADICTS",
+    "out"
+   ],
+   [
+    "SUPPORTS",
+    "in"
+   ],
+   [
+    "WEAKENS",
+    "out"
+   ],
+   [
+    "CONTRADICTS",
+    "in"
+   ],
+   [
+    "WEAKENS",
+    "out"
+   ]
+  ],
+  "walk": [
+   [
+    "K-gen_000-02-00",
+    null,
+    null
+   ],
+   [
+    "L-gen_000-02-01",
+    "CONTRADICTS",
+    "in"
+   ],
+   [
+    "Q-gen_000-02-02",
+    "MEASURES",
+    "out"
+   ],
+   [
+    "L-gen_000-02-01",
+    "MEASURES",
+    "in"
+   ],
+   [
+    "K-gen_000-02-00",
+    "CONTRADICTS",
+    "out"
+   ],
+   [
+    "L-gen_000-02-01",
+    "SUPPORTS",
+    "in"
+   ],
+   [
+    "K-gen_000-02-00",
+    "WEAKENS",
+    "out"
+   ],
+   [
+    "L-gen_000-02-01",
+    "CONTRADICTS",
+    "in"
+   ],
+   [
+    "K-gen_000-02-00",
+    "WEAKENS",
+    "out"
+   ]
+  ]
+ }
+}

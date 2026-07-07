@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "result_summary": "Phase-0 gate SUPPORTED on Dataset A (7 targets): ordered narrows 6.34x, top_3_recall=1.0, false_elimination=0.0, monotonic=1.0, survival=1.0; primary falsification condition NOT triggered. Caveats: order and type are inert (ordered==unordered==typed, 0% gain) due to globally consistent ordering and one type per value; shuffled control degenerate (final_empty_rate=1.0) so 'ordered beats shuffled' is a brittleness artifact. Validates narrowing+survival mechanic, not transition structure.",
+  "interpretation": "Narrowing+survival confirmed on a controlled toy; transition order/typing value is inconclusive here and requires a conflict-rich dataset.",
+  "limitations": "Evidence is target's own canonical attributes (best-case arrival). Ordered==unordered==typed in this toy. Shuffled control degenerate (collapses to empty). Canonical-order metrics are an upper bound on arrival-order robustness.",
+  "confidence": "high",
+  "decision": "continue"
+}

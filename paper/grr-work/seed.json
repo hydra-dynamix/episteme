@@ -1,0 +1,431 @@
+{
+  "root": "root",
+  "version": 0,
+  "nodes": {
+    "root": {
+      "id": "root",
+      "kind": "internal",
+      "title": "Recurrence-Sensitive Memory: A Typed Relational Substrate for Basin Retrieval",
+      "spec": "A research paper describing a label-free recurrence-sensitive memory substrate built on typed relational walks. The substrate retrieves bounded basins of compatible structure, then refines them with typed/content payload projection and DP/LCS alignment. The paper situates the result in a three-project lineage (topology -> ecphory-2 -> episteme) and states honest boundaries: it is recollection / candidate-space compression with typed projection, not semantic truth or general edit-distance memory.",
+      "children": [
+        "abstract",
+        "introduction",
+        "background",
+        "substrate",
+        "results",
+        "boundary",
+        "lineage",
+        "discussion",
+        "conclusion"
+      ]
+    },
+    "abstract": {
+      "id": "abstract",
+      "kind": "leaf",
+      "title": "Abstract",
+      "spec": "<=200 words. Problem: can a memory substrate retrieve reusable basins from relational structure rather than labels? Thesis: a canonical label-free topology index with typed/content payload projection and DP/LCS alignment retrieves broad basins and refines them in a way that is not reducible to flat overlap. Headline results: clean retrieval 1.0 accuracy with 32x reduction on LDGR historical content; polysemy disambiguation 0.92; same-node rewired decoys defeat node-bag matching but not content-graph matching. State the boundary plainly: deletion of identity-establishing evidence is a destructive perturbation in isolation, but realistic redundant queries often survive it.",
+      "children": []
+    },
+    "introduction": {
+      "id": "introduction",
+      "kind": "internal",
+      "title": "Introduction",
+      "spec": "Motivate by naming the lineage question: topology showed identity-free recurrence is a constraint memory but stripped relation types; ecphory-2 split trajectory from semantic memory and found a run-46 ceiling where synthetic relaxation could not beat a label-overlap index. Episteme asks whether keeping relation types and projecting payload graphs beats flat overlap exactly where flat overlap should fail. Preview contributions and stake the honest scope.",
+      "children": [
+        "intro-question",
+        "intro-thesis",
+        "intro-contributions"
+      ]
+    },
+    "intro-question": {
+      "id": "intro-question",
+      "kind": "leaf",
+      "title": "The question",
+      "spec": "State the central question: can a label-free substrate retrieve reusable basins from relational structure, and can stored semantic connections inside a keyed motif refine a broad bundle beyond flat node/token overlap? Make clear this is retrieval/compression, not semantic prediction.",
+      "children": []
+    },
+    "intro-thesis": {
+      "id": "intro-thesis",
+      "kind": "leaf",
+      "title": "Thesis: the graph is a projection, the concept is a basin",
+      "spec": "Argue that the relational graph is a projection of stable basins, labels are payload not key, and retrieval is relaxation not lookup. The substrate should activate broad basins and narrow them with typed projection, not match tokens directly.",
+      "children": []
+    },
+    "intro-contributions": {
+      "id": "intro-contributions",
+      "kind": "leaf",
+      "title": "Contributions",
+      "spec": "Enumerate: (1) port of the canonical topology mechanism to a TYPED relational graph, answering whether relation types beat label-free topology; (2) diagnosis that noise collapse was a matcher failure, not a representation failure, repaired by DP/LCS; (3) a measured boundary: first-occurrence deletion is destructive but behaviorally often tolerable; (4) payload-graph refinement that beats flat overlap on same-node rewired decoys; (5) the whole thing validated on real LDGR project history as memory content.",
+      "children": []
+    },
+    "background": {
+      "id": "background",
+      "kind": "internal",
+      "title": "Background and Lineage",
+      "spec": "The two parent projects and what each left open. This is necessary because episteme's claims are continuations of specific prior results, not isolated work.",
+      "children": [
+        "bg-topology",
+        "bg-ecphory",
+        "bg-open"
+      ]
+    },
+    "bg-topology": {
+      "id": "bg-topology",
+      "kind": "leaf",
+      "title": "Topology constraint memory",
+      "spec": "Summarize the topology project: identity-free recurrent temporal topology as an auxiliary constraint memory; set-valued retrieval (coverage 0.88, inclusion 1.0, compression 23.9x); coarse-to-fine two-stage filtering validated empirically; the deliberate invariant that relation types were stripped. Cite the specific open question left at the end: whether keeping relation types helps discrimination was never measured.",
+      "children": []
+    },
+    "bg-ecphory": {
+      "id": "bg-ecphory",
+      "kind": "leaf",
+      "title": "Ecphory-2: trajectory vs semantic memory",
+      "spec": "Summarize ecphory-2: the split between trajectory memory (identity-free temporal prefix -> plausible futures) and semantic memory (constraints -> compatible neighborhoods); the projection-vs-substrate thesis (the graph is a projection of stable basins, labels are payload); the unlabeled-constraint-basin pilot showing anonymous constraints recover human labels above shuffled chance; the agreement-gated dual lookup beating naive union.",
+      "children": []
+    },
+    "bg-open": {
+      "id": "bg-open",
+      "kind": "leaf",
+      "title": "The run-46 ceiling",
+      "spec": "State the ceiling precisely: at run 46, synthetic relaxation dynamics could not beat a plain 1-NN label-overlap index on any broad metric; relaxation's only unique act was reconstructive completion, not retrieval advantage; the only escape was under strong noise where the unlabeled semantic channel had a unique win. This is the ceiling episteme must escape, and the escape must be measurable on cases flat overlap should lose.",
+      "children": []
+    },
+    "substrate": {
+      "id": "substrate",
+      "kind": "internal",
+      "title": "The Substrate",
+      "spec": "The architecture and its primitives.",
+      "children": [
+        "sub-arch",
+        "sub-signature",
+        "sub-relaxation",
+        "sub-matcher",
+        "sub-payload"
+      ]
+    },
+    "sub-arch": {
+      "id": "sub-arch",
+      "kind": "leaf",
+      "title": "Architecture",
+      "spec": "The frozen architecture: canonical label-free topology index -> broad basin retrieval -> typed/content payload projection -> DP/LCS alignment -> fine discrimination. State that this is ecphory-2's trajectory-memory pipeline (trace -> topology prefix -> suffix bundle -> post-lookup semantic unpacking -> refinement) realized on a typed relational graph, with topology's coarse->fine two-stage pattern as the production shape.",
+      "children": []
+    },
+    "sub-signature": {
+      "id": "sub-signature",
+      "kind": "leaf",
+      "title": "Typed canonical signatures",
+      "spec": "Define the two signatures: typed_canonical_signature (node ids canonicalized by first occurrence, edge labels = relation type + traversal direction kept) and label_free_canonical_signature (edge labels collapsed). The comparison of these two is itself scientific content: does keeping relation types beat label-free topology? Identity is established by recurrence position, not by concrete label.",
+      "children": []
+    },
+    "sub-relaxation": {
+      "id": "sub-relaxation",
+      "kind": "leaf",
+      "title": "Basin retrieval by relaxation",
+      "spec": "Discrete prefix-consistency pruning retrieves a bounded active set (a basin) rather than a single answer. Held-out retrieval: index on instances 0..k-2 of each family, query instance k-1. Bundle reduction is the load-bearing metric, not top-1 accuracy, because the substrate compresses the candidate space for downstream selection.",
+      "children": []
+    },
+    "sub-matcher": {
+      "id": "sub-matcher",
+      "kind": "leaf",
+      "title": "DP/LCS alignment as the repair layer",
+      "spec": "The greedy single-pass subsequence matcher was the noise-collapse cause: one unmatched inserted evidence node exhausted the candidate iterator and later evidence could not recover. DP/LCS edit-distance alignment can skip unmatched evidence and candidate nodes optimally. This is a matcher-layer repair; identity is left untouched.",
+      "children": []
+    },
+    "sub-payload": {
+      "id": "sub-payload",
+      "kind": "leaf",
+      "title": "Payload-graph projection refinement",
+      "spec": "Semantic/content connections are stored inside the keyed motif as a payload graph. After coarse basin retrieval, each candidate payload graph is projected and matched against the target payload graph topology and relations. This is a second-stage refinement, not a key. Crucially, it is not reducible to node/token overlap: a rewired decoy with the same nodes and same relation-label multiset but different connections is indistinguishable to node-bag matching but distinguishable to content-graph matching.",
+      "children": []
+    },
+    "results": {
+      "id": "results",
+      "kind": "internal",
+      "title": "Results",
+      "spec": "Measured findings, each tied to a specific experiment and metric. No verdicts without evidence.",
+      "children": [
+        "res-typed",
+        "res-setvalued",
+        "res-matcher",
+        "res-deletion",
+        "res-behavioral",
+        "res-payload"
+      ]
+    },
+    "res-typed": {
+      "id": "res-typed",
+      "kind": "leaf",
+      "title": "Typed edges carry information topology does not",
+      "spec": "On polysemy (prefix-shared divergent families, the bat/bank construction): typed disambiguation 1.0 vs label-free 0.25. On corrupt stability: typed 0.69 vs label-free 0.29. This answers the topology project's open phase-4 question: keeping relation types helps when the task requires distinguishing structurally similar neighborhoods.",
+      "children": []
+    },
+    "res-setvalued": {
+      "id": "res-setvalued",
+      "kind": "leaf",
+      "title": "Set-valued retrieval generalizes to typed content",
+      "spec": "Held-out inclusion 1.0, bundle reduction 36x on synthetic families, 32x on LDGR historical content. Polysemy ambiguity retention 1.0: shared prefixes activate multiple basins rather than collapsing to one. The basin retrieves a compact set, not a single answer, consistent with both parent projects.",
+      "children": []
+    },
+    "res-matcher": {
+      "id": "res-matcher",
+      "kind": "leaf",
+      "title": "Noise collapse was a matcher failure",
+      "spec": "An identity-regime smoke falsified the initial representation diagnosis: canonical is stable to insertion (9/9) and repeat-deletion (8/9), brittle only to first-occurrence deletion (4/9); role_payload walk-local identity was worse (0/9, 0/9, 4/9). Matcher ablation: greedy neutral-noise transition at magnitude 2; DP/LCS at magnitude 3, with polysemy (1.0) and reduction (34x) unchanged.",
+      "children": []
+    },
+    "res-deletion": {
+      "id": "res-deletion",
+      "kind": "leaf",
+      "title": "Deletion brittleness is a narrow identity boundary",
+      "spec": "Deletion controls: canonical first-recurring deletion 0.5, repeat deletion 1.0. The proposed anchored-recurring fix is rejected: it does not repair the target failure and damages polysemy (1.0 -> 0.43). Edge-sequence and bag-of-edges controls are deletion-robust but lose polysemy (0.86 and 0.57). The tradeoff is real: recurrence identity preserves discrimination but depends on identity-establishing evidence.",
+      "children": []
+    },
+    "res-behavioral": {
+      "id": "res-behavioral",
+      "kind": "leaf",
+      "title": "Behavioral relevance on LDGR history",
+      "spec": "Memory content: 32 items from LDGR project observations, artifact descriptions, and report chunks. Clean baseline valid: accuracy 1.0, reduction 32x. Plausible query survival 0.8884 (0.8644 with first-recurring deletion, 0.8970 without). Control/adversarial survival 0.4479. The boundary is behaviorally often tolerable because realistic redundant queries retain enough typed recurrence evidence to recover.",
+      "children": []
+    },
+    "res-payload": {
+      "id": "res-payload",
+      "kind": "leaf",
+      "title": "Payload-graph refinement beats flat overlap",
+      "spec": "Same-node rewired decoy pool (same nodes + same relation-label multiset, different connections). Aggregate: coarse_only top1 0.0, node_bag 0.0 (decoys tie), relation_topology 0.0, content_graph 0.7969 with 54.5x reduction. Per-mode content_graph: core/partial/noisy all 1.0 top-1 with 64x reduction; only the underdetermined topic+mechanism query stays broad (0.1875). This is the escape from ecphory-2's run-46 ceiling, made clean.",
+      "children": []
+    },
+    "boundary": {
+      "id": "boundary",
+      "kind": "internal",
+      "title": "Boundaries",
+      "spec": "What the substrate does and does not claim. Honesty is load-bearing: the methodological discipline of all three projects is that a correctly recorded failure is more valuable than an incorrectly reported success.",
+      "children": [
+        "bnd-operating",
+        "bnd-notclaimed",
+        "bnd-deletion"
+      ]
+    },
+    "bnd-operating": {
+      "id": "bnd-operating",
+      "kind": "leaf",
+      "title": "Operating envelope",
+      "spec": "Works: clean LDGR-history retrieval, broad topical basin activation, typed/mechanism disambiguation, plausible incomplete queries, plausible single omissions, neutral noise after DP/LCS repair. Weak: broad random partial notes, adversarial deletion of identity-establishing evidence, deletion robustness if recurrence-sensitive discrimination must be preserved.",
+      "children": []
+    },
+    "bnd-notclaimed": {
+      "id": "bnd-notclaimed",
+      "kind": "leaf",
+      "title": "What is not claimed",
+      "spec": "Not claimed: perfect noise stability, general edit-distance memory, robustness to broad random deletion, robustness to adversarial removal of identity-establishing evidence, scale beyond a 32-item LDGR-history corpus, semantic truth. The substrate retrieves recorded structure; it does not reason.",
+      "children": []
+    },
+    "bnd-deletion": {
+      "id": "bnd-deletion",
+      "kind": "leaf",
+      "title": "The deletion boundary statement",
+      "spec": "State plainly: first-occurrence deletion is a destructive perturbation in isolation, but realistic redundant memory queries often survive it. The relevance of the boundary depends on query behavior, not a universal failure. This is a representation cost of canonical recurrence identity, not a scoring bug.",
+      "children": []
+    },
+    "lineage": {
+      "id": "lineage",
+      "kind": "internal",
+      "title": "Position in the Lineage",
+      "spec": "A table mapping what each project contributed and where episteme advanced.",
+      "children": [
+        "lin-table",
+        "lin-threads"
+      ]
+    },
+    "lin-table": {
+      "id": "lin-table",
+      "kind": "leaf",
+      "title": "Contribution map",
+      "spec": "Tabulate: identity-free canonicalization (topology established), set-valued retrieval (topology established, ecphory-2 inherited, episteme ported to typed content), coarse->fine two-stage (topology validated, episteme adopted as architecture), typed-edge value (topology left open, episteme answered), trajectory/semantic split and projection thesis (ecphory-2 established, episteme built on it), unlabeled basins recover labels (ecphory-2 pilot, episteme generalized to LDGR history), agreement-gated refinement (ecphory-2 established, episteme inherited), relaxation vs index ceiling (ecphory-2 falsified at run 46, episteme found the escape), matcher vs representation layer (ecphory-2 conflated, episteme separated), deletion boundary relevance (episteme measured on real content).",
+      "children": []
+    },
+    "lin-threads": {
+      "id": "lin-threads",
+      "kind": "leaf",
+      "title": "Threads closed and opened",
+      "spec": "Closed: topology's typed-edge question (answered: typed helps), ecphory-2's run-46 ceiling (escaped on content-graph refinement). Opened: does the content-graph escape generalize beyond LDGR history to code/documents/event logs; does agreement-gated dual lookup scale; can the substrate serve as a live retrieval surface. Next step is integration/application testing, not more mechanism patching.",
+      "children": []
+    },
+    "discussion": {
+      "id": "discussion",
+      "kind": "internal",
+      "title": "Discussion",
+      "spec": "Implications, limitations, and the methodological note.",
+      "children": [
+        "disc-implication",
+        "disc-limitations",
+        "disc-method"
+      ]
+    },
+    "disc-implication": {
+      "id": "disc-implication",
+      "kind": "leaf",
+      "title": "Implications",
+      "spec": "The substrate is a believable operating envelope for recurrence-sensitive basin retrieval with typed projection. The content-graph escape from the node-bag ceiling suggests the value of storing connections inside the motif rather than only at the key. The two-stage coarse->fine pattern generalizes across domains (workflow events, game trajectories, relational concepts).",
+      "children": []
+    },
+    "disc-limitations": {
+      "id": "disc-limitations",
+      "kind": "leaf",
+      "title": "Limitations",
+      "spec": "32-item LDGR-history corpus is small; numbers are point estimates without bootstrap CI. The two-stage gain over a single coarse stage is modest when long windows are already specific (topology's finding, re-confirmed). Flat node/token overlap remains a strong baseline; content-graph only clearly wins when the query carries actual internal connections. Not yet a live retrieval surface.",
+      "children": []
+    },
+    "disc-method": {
+      "id": "disc-method",
+      "kind": "leaf",
+      "title": "Methodological note",
+      "spec": "The identity-regime smoke falsified the project's own premise before a benchmark was built on it; that prevented redesigning the representation around a false diagnosis. This is the discipline all three projects share: when an optimization appears, do not call it cheating and remove it; interrogate the signal, expose it as a controllable mechanism. A correctly recorded failure is more valuable than an incorrectly reported success.",
+      "children": []
+    },
+    "conclusion": {
+      "id": "conclusion",
+      "kind": "leaf",
+      "title": "Conclusion",
+      "spec": "Restate the defensible claim: a typed relational substrate supports identity-free basin consolidation and held-out retrieval with strong bundle reduction; typed edge labels carry discriminating information beyond pure topology; DP/LCS alignment repairs neutral-noise matcher collapse without touching identity; deletion of identity-establishing evidence is a real but narrow boundary whose relevance depends on query redundancy; stored payload graphs refine broad bundles in a way not reducible to flat node/token overlap. Close with the next step: integration and application testing, not more mechanism patching.",
+      "children": []
+    }
+  },
+  "obligations": {
+    "oblg-contrib-payoff": {
+      "id": "oblg-contrib-payoff",
+      "kind": "setup_payoff",
+      "payload": {
+        "setup_node": "intro-contributions",
+        "payoff_scope": [
+          "substrate",
+          "results",
+          "boundary"
+        ],
+        "strength": "must",
+        "satisfied_by": null
+      },
+      "gloss": "Each contribution stated in the introduction must be substantively developed in the substrate, results, or boundary sections.",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    },
+    "oblg-typed-claim-support": {
+      "id": "oblg-typed-claim-support",
+      "kind": "claim_support",
+      "payload": {
+        "claim_node": "res-typed",
+        "support_kind": "evidence",
+        "min_sources": 2,
+        "scope": "results",
+        "satisfied_by": [
+          "res-typed"
+        ]
+      },
+      "gloss": "The claim that typed edges carry information topology does not must cite the polysemy (1.0 vs 0.25) and corrupt-stability (0.69 vs 0.29) evidence.",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    },
+    "oblg-boundary-honesty": {
+      "id": "oblg-boundary-honesty",
+      "kind": "custom",
+      "payload": {
+        "predicate": "The deletion boundary must be stated as 'destructive in isolation but often tolerable under realistic redundant queries', not as either solved or fatal. The behavioral relevance numbers (0.8884 plausible survival) must appear alongside the isolated-deletion numbers (0.5 first-recurring).",
+        "references": [
+          "res-deletion",
+          "res-behavioral",
+          "bnd-deletion"
+        ],
+        "embedding": null
+      },
+      "gloss": "The deletion result must not be framed as either a failure or a success; both the isolated and behavioral numbers must be present.",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    },
+    "oblg-ceiling-escape-support": {
+      "id": "oblg-ceiling-escape-support",
+      "kind": "claim_support",
+      "payload": {
+        "claim_node": "res-payload",
+        "support_kind": "evidence",
+        "min_sources": 1,
+        "scope": "results",
+        "satisfied_by": [
+          "res-payload"
+        ]
+      },
+      "gloss": "The payload-graph-refinement-beats-flat-overlap claim must cite the same-node rewired decoy result (node_bag 0.0 vs content_graph 0.7969 aggregate, 1.0 on core/partial/noisy).",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    },
+    "oblg-matcher-vs-rep": {
+      "id": "oblg-matcher-vs-rep",
+      "kind": "setup_payoff",
+      "payload": {
+        "setup_node": "sub-matcher",
+        "payoff_scope": [
+          "res-matcher"
+        ],
+        "strength": "must",
+        "satisfied_by": null
+      },
+      "gloss": "The matcher-vs-representation distinction set up in the substrate section must be paid off by the matcher-ablation result (noise transition 2 -> 3, polysemy/reduction unchanged).",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    },
+    "oblg-lineage-accuracy": {
+      "id": "oblg-lineage-accuracy",
+      "kind": "terminology_consistency",
+      "payload": {
+        "term": "run-46 ceiling",
+        "definition": "The ecphory-2 result that synthetic relaxation dynamics could not beat a plain 1-NN label-overlap index on any broad metric; relaxation's only unique act was reconstructive completion.",
+        "defined_in": "bg-open",
+        "scope": "lineage",
+        "allowed_variants": [
+          "run 46 ceiling",
+          "the ceiling"
+        ],
+        "forbidden_variants": []
+      },
+      "gloss": "The run-46 ceiling must be described consistently where it appears, as the specific falsification from ecphory-2, not as a vague 'prior limitation'.",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    },
+    "72cbb51a5d6d4b0896072a4ed6fe4b1a": {
+      "id": "72cbb51a5d6d4b0896072a4ed6fe4b1a",
+      "kind": "claim_support",
+      "payload": {
+        "claim_node": "res-setvalued",
+        "support_kind": "evidence",
+        "min_sources": 1,
+        "scope": "results",
+        "satisfied_by": [
+          "res-setvalued"
+        ]
+      },
+      "gloss": "The set-valued-retrieval-generalizes claim must cite inclusion 1.0, bundle reduction (36x synthetic / 32x LDGR), and polysemy ambiguity retention 1.0.",
+      "authority": "user",
+      "schema_version": 1,
+      "satisfaction": "unknown",
+      "retracted": false,
+      "retract_reason": null
+    }
+  },
+  "realizations": {}
+}

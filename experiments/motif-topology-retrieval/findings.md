@@ -50,7 +50,7 @@ basin stability under perturbation.
 The strongest defensible finding is:
 
 > A typed relational substrate supports identity-free family consolidation and
-> held-out retrieval (perfect inclusion, 36x bundle reduction), and typed edge
+> held-out retrieval (perfect inclusion, 34x bundle reduction), and typed edge
 > labels carry discriminating information beyond pure topology on prefix-shared
 > (polysemous) families and on corrupted-evidence recovery. Under the discrete
 > prefix-consistency operator tested here, basins do NOT survive one-item
@@ -66,7 +66,7 @@ That last clause is a measurement of the operator, not a defense of the idea.
 - Identity-free consolidation on a typed graph: 20/20 generated families
   consolidate (all instances share a signature), 20/20 families distinct.
 - Held-out retrieval: index on instances 0,1; query instance 2 (symbolically
-  novel). Inclusion 1.0, bundle reduction 36x across 20 families + 8 polysemy pairs.
+  novel). Inclusion 1.0, bundle reduction 34x across 20 families + 8 polysemy pairs.
 - Polysemy (prefix-shared pairs, the `bat`/`bank` construction): ambiguity
   retained 1.0 — both basins stay active on the shared prefix rather than
   collapsing to one.
@@ -92,7 +92,7 @@ instances_per_family:     3   (2 indexed, 1 held-out query)
 
 metric                         typed    labelfree
 inclusion_rate                 1.0      1.0
-bundle_reduction               36.0     36.0
+bundle_reduction               34.0     34.0
 stability_drop_interior        0.0      0.05
 stability_corrupt              0.6929   0.2929
 basin_depth_drop_interior_max  0        2
@@ -156,7 +156,7 @@ single suffix step.
 Establishes:
 
 - Typed relational walks are a valid carrier for identity-free motif memory
-  (consolidation + held-out retrieval work, 36x reduction).
+  (consolidation + held-out retrieval work, 34x reduction).
 - Typed edges carry information that pure topology does not, on tasks that
   require distinguishing similar neighborhoods.
 - Polysemy-style prefix-shared families retain ambiguity under this operator.

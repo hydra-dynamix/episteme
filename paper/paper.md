@@ -2,7 +2,11 @@
 
 ## Abstract
 
-Can a memory substrate retrieve reusable basins from relational structure rather than from labels? We build a canonical, label-free topology index over typed relational walks, project typed/content payloads onto retrieved basins, and align them with a DP/LCS matcher. The substrate retrieves broad basins and refines them in a way that is not reducible to flat node/token overlap. On LDGR project history used as memory content, it reaches clean retrieval accuracy of 1.0 with 32× bundle reduction. Typed edges carry information that pure topology does not: polysemy disambiguation is 1.0 (typed) versus 0.25 (label-free). Same-node rewired decoys — identical node sets and relation-label multisets but different connections — defeat node-bag matching (top-1 0.0) but not content-graph matching (top-1 1.0 on core/partial/noisy queries). A real boundary remains: deletion of identity-establishing evidence is destructive in isolation, but realistic redundant queries survive it (0.86 survival with first-recurring deletion on plausible queries). This is recollection and candidate-space compression with typed projection, not semantic truth or general edit-distance memory.
+This paper describes a recurrence-sensitive memory substrate that retrieves recorded relational structure; it does not reason over it. Its job is candidate-space compression: from partial structure, retrieve a bounded basin of compatible items and refine it for a downstream selector.
+
+The substrate is built as one logical progression of four falsifiable moves. First, canonical recurrence indexing — node identity by first-occurrence position, not label — retrieves bounded basins rather than single answers. Second, adding typed relation labels to that index sharpens a discrimination that pure topology cannot provide: polysemy disambiguation rises from 0.25 to 1.0. Third, when neutral noise collapsed retrieval, an identity-regime smoke test attributed the failure to the *matcher*, not the *representation*; replacing a greedy with a DP/LCS alignment moved the noise transition from magnitude 2 to 3 without touching identity. Fourth, storing the semantic connections inside each keyed motif as a payload graph then escapes the flat node-bag ceiling: same-node rewired decoys (identical node sets and relation-label multisets, different connections) defeat node-bag matching (top-1 0.0) but not content-graph matching (top-1 1.0 on structured queries).
+
+On LDGR project history used as memory content, the substrate reaches clean retrieval 1.0 with 32× bundle reduction. A real boundary remains: deletion of identity-establishing evidence is destructive in isolation, but realistic redundant queries survive it (0.86 with first-recurring deletion on plausible queries). All results so far are on LDGR-derived workloads; whether the operating envelope holds on code repositories, document collections, or knowledge graphs is the open test this paper does not close.
 
 ## 1. Introduction
 
@@ -14,9 +18,9 @@ This observation, inherited from prior work on graph-reasoning systems, motivate
 
 We ask whether a label-free substrate can retrieve reusable basins from relational structure, and whether semantic connections stored *inside* a keyed motif can refine a broad bundle beyond flat node/token overlap. We frame this as retrieval and compression, not semantic prediction. The substrate should activate broad basins and narrow them with typed projection; it should not match tokens directly.
 
-### 1.2 Thesis: the graph is a projection, the concept is a basin
+### 1.2 Organizing assumption: the graph is a projection, the concept is a basin
 
-We treat the relational graph as a projection of stable basins, labels as payload rather than key, and retrieval as relaxation rather than lookup [ecphory-2]. The substrate activates broad basins and narrows them with typed projection. This inverts the usual assumption that nodes and edges are the fundamental atoms: under our view, the observable graph is a projection of deeper dynamical basins, and identity is established by recurrence position, not by concrete label.
+This work inherits, rather than proves, one organizing assumption from ecphory-2: the relational graph is a projection of stable basins, labels are payload rather than key, and retrieval is relaxation rather than lookup. We adopt it as a design hypothesis and spend the rest of the paper measuring where a substrate built on it holds and where it breaks. The contribution of this paper is not the projection thesis itself but the typed-relational substrate built on top of it, and the measured boundaries of that substrate under perturbation. Identity, throughout, is established by recurrence position, not by concrete label.
 
 ### 1.3 Contributions
 
@@ -46,19 +50,52 @@ At run 46, ecphory-2 falsified the hypothesis that local relaxation dynamics bea
 
 ## 3. The Substrate
 
-### 3.1 Architecture
-
-The frozen architecture is:
+**Figure 1.** The retrieval pipeline, end to end. Stages 1–2 are the label-free coarse key; stages 3–4 are the typed/content refinement layer. The matcher (stage 5) is replaceable without touching the representation, which is what the noise-collapse diagnosis (§4.3) exploited.
 
 ```text
-canonical label-free topology index
-  → broad basin retrieval
-  → typed/content payload projection
-  → DP/LCS alignment
-  → fine discrimination
+                    ┌──────────────────────────────┐
+                    │       stored memory          │
+                    │  (typed relational graphs)   │
+                    └──────────────┬───────────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │  STAGE 1  canonical recurrence signature │  (identity by
+              │           node ids = first-occurrence    │   position,
+              │           edge labels kept as type|dir   │   not label)
+              └────────────────────┬────────────────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │  STAGE 2  label-free coarse index        │  (broad basin;
+              │           retrieve basin                │   recurrence
+              │           (bounded active set)          │   only)
+              └────────────────────┬────────────────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │  STAGE 3  unpack typed payload graph     │  (relations +
+              │           per candidate                 │   content)
+              └────────────────────┬────────────────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │  STAGE 4  payload-graph projection       │  (refinement,
+              │           match against target graph    │   not a key)
+              └────────────────────┬────────────────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │  STAGE 5  DP/LCS alignment               │  (matcher;
+              │           (skip-capable, repairable)    │   replaceable)
+              └────────────────────┬────────────────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │  STAGE 6  candidate ranking             │
+              │           (fine discrimination)         │
+              └─────────────────────────────────────────┘
 ```
 
 This is ecphory-2's trajectory-memory pipeline (trace → topology prefix → suffix bundle → post-lookup semantic unpacking → refinement) realised on a typed relational graph, with topology's coarse→fine two-stage pattern as the production shape.
+
+### 3.1 Architecture
+
+The frozen architecture, reading Figure 1 top to bottom: a canonical label-free topology index (stages 1–2) performs broad basin retrieval; a typed/content payload projection (stages 3–4) narrows it; a DP/LCS alignment (stage 5) supplies skip-capable matching; fine discrimination (stage 6) ranks the survivors. The boundary between coarse key (label-free) and refinement layer (typed/content) is hard by design, and the matcher is an isolated replaceable component — a property the noise-collapse diagnosis in §4.3 depends on.
 
 ### 3.2 Typed canonical signatures
 
@@ -154,7 +191,7 @@ The substrate is a believable operating envelope for recurrence-sensitive basin 
 
 ### 7.1 Limitations
 
-The 32-item LDGR-history corpus is small; numbers are point estimates without bootstrap confidence intervals. The two-stage gain over a single coarse stage is modest when long windows are already specific (topology's finding, re-confirmed). Flat node/token overlap remains a strong baseline; content-graph only clearly wins when the query carries actual internal connections.
+The 32-item LDGR-history corpus is small; numbers are point estimates without bootstrap confidence intervals. The two-stage gain over a single coarse stage is modest when long windows are already specific (topology's finding, re-confirmed). Flat node/token overlap remains a strong baseline; content-graph only clearly wins when the query carries actual internal connections. Most importantly, *every* result in this paper is measured on LDGR-derived workloads — the substrate was designed and debugged against that content. Whether the operating envelope is a property of the representation or a property of LDGR-shaped workloads can only be settled by testing on domains that did not participate in developing the substrate: code repositories, document collections, and external knowledge graphs. That is the discriminating next experiment, and this paper does not close it.
 
 ### 7.2 Methodological note
 
